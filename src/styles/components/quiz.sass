@@ -1,12 +1,17 @@
 .quiz
     margin-top: 150px
     &__stage
-        transition: all 0.3s
+
         transform: scale(0)
-        display: none
+        // display: none
+        height: 0
+        width: 0
     &__stage._active
+        transition: all 0.5s
         transform: scale(1)
-        display: block
+        height: auto
+        width: auto
+        // display: block
     .img-center
         display: block
         margin: auto
