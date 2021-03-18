@@ -1,8 +1,11 @@
 .quiz
     margin-top: 150px
     &__stage
+        transition: all 0.3s
+        transform: scale(0)
         display: none
     &__stage._active
+        transform: scale(1)
         display: block
     .img-center
         display: block
