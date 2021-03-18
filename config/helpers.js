@@ -20,9 +20,9 @@ function generateHtmlFiles(templateDir, isDev) {
 			// filename: filename(name, 'html', isDev),  //dont work
 			filename: `${name}${!isDev ? '.[contenthash]' : ''}.html`,
 			template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-			minify: {
-				collapseWhitespace: !isDev,
-			},
+			// minify: {
+			// 	collapseWhitespace: !isDev,
+			// },
 			inject: true,
 			hash: true,
 		});

@@ -13,7 +13,7 @@
     "build": "webpack --config ./config/webpack.prod.js"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0"
+    "bootstrap": "^5.0.0-beta2"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

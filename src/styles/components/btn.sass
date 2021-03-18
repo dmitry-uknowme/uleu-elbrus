@@ -1,0 +1,36 @@
+.btn
+    color: #fff
+    background: linear-gradient(to bottom, #f0bf2c, #efd23f)
+    border-radius: 30px
+    padding: 10px 20px
+    text-transform: uppercase
+    font-weight: 700
+    position: relative
+    overflow: hidden
+    transition: all 0.5s
+
+.btn._calc
+    padding-right: 60px
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 8%
+        transform: translateY(-50%)
+        height: 25px
+        width: 25px
+        background: url('../assets/images/btn/btn__calc.png')
+
+.btn._next
+    color: #000
+    background: #e8e8e8
+    padding-right: 70px
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 14%
+        transform: translateY(-50%)
+        width: 25px
+        height: 12px
+        background: url('../assets/images/btn/btn__next.png')

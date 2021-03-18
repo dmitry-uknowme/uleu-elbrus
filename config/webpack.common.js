@@ -43,5 +43,8 @@ module.exports = {
 	plugins: [new CleanWebpackPlugin()],
 	resolve: {
 		extensions: ['.js'],
+		alias: {
+			'@img': PROJECT.path.src + '/assets/images',
+		},
 	},
 };
