@@ -1,15 +1,18 @@
 .intro
+    position: relative
     margin-top: 60px
     display: flex
     &__house
-        position: relative
+        position: absolute
+        width: 100%
+
         &-img
             position: absolute
             top: -18%
             right: -17%
             width: 800px
             height: 700px
-            background: url('../assets/images/intro/intro__house3.png')
+            background: url('../assets/images/intro/intro__house3.png') no-repeat
 
 @media screen and (max-width: 1600px)
     .intro
@@ -26,3 +29,12 @@
                 transform: scaleY(0.85)
                 width: 400px
 
+
+@media screen and (max-width: 992px)
+    .intro
+        &__house
+            &-img
+                height: 400px
+                top: 0
+                right: -270px
+                background-size: cover
