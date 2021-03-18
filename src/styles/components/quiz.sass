@@ -1,7 +1,39 @@
 .quiz
     margin-top: 150px
+    &__success
+        transition: all 0.5s
+        color: #e6b315
+        font-size: 34px
+        text-align: center
+        text-transform: uppercase
+        font-weight: 700
+        position: relative
+        transform: scale(0)
+        // box-shadow: 0px 27px 14px 23px rgba(161, 126, 21, 0.2)
+    &__success._active
+        transform: scale(1)
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 39px
+            height: 75px
+            background: url('../assets/images/quiz/quiz__success-light-left.png')
+        &::after
+            content: ''
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 39px
+            height: 75px
+            background: url('../assets/images/quiz/quiz__success-light-right.png')
+    .modal__window
+        width: 60%
+        margin-top: 200px
     &__stage
-
         transform: scale(0)
         // display: none
         height: 0
@@ -26,6 +58,10 @@
         padding-top: 60px
         padding-bottom: 40px
         border: 2px solid grey
+    &__box._modal
+        box-shadow: none
+        border: none
+
     &__question
         text-align: center
         text-transform: uppercase

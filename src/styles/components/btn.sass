@@ -6,7 +6,7 @@
     text-transform: uppercase
     font-weight: 700
     position: relative
-    overflow: hidden
+    // overflow: hidden
     transition: all 0.5s
 
 .btn._calc
@@ -34,3 +34,18 @@
         width: 25px
         height: 12px
         background: url('../assets/images/btn/btn__next.png')
+
+.btn._file
+    padding-left: 65px
+    text-transform: none
+    color: #a17e15
+    // box-shadow: 0px 27px 14px 23px rgba(161, 126, 21, 0.2)
+    &::after
+        content: ''
+        position: absolute
+        top: 65%
+        left: -2%
+        transform: translateY(-50%)
+        width: 56px
+        height: 70px
+        background: url('../assets/images/btn/btn__file.png')
