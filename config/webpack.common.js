@@ -8,7 +8,7 @@ module.exports = {
 	experiments: {
 		asset: true,
 	},
-	entry: { index: PROJECT.path.src + '/index.js' },
+	entry: { index: PROJECT.path.src + '/js/index.js' },
 	output: {
 		path: PROJECT.path.build,
 	},
