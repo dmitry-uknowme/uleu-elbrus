@@ -150,11 +150,16 @@
     &__items
         margin-top: 40px
         display: flex
-        justify-content: space-between
+        justify-content: flex-start
     &__item
         line-height: 1
-        margin-right: auto
+        margin-right: 1.5rem
+        &-img
+            height: 100px
+            margin-bottom: 10px
         &-title
+            //height: 45px
+            margin-bottom: 5px
             font-size: 15px
             font-weight: 700
             text-transform: uppercase
@@ -166,3 +171,32 @@
         margin-top: 70px
         width: 350px
         font-size: 18px
+
+
+@media screen and (max-width: 992px)
+    .quiz-header
+        &__items
+            justify-content: center !important
+        &__item
+            margin: 0 1rem
+            &:first-child
+                margin-left: 0
+            &:last-child
+                margin-right: 0
+
+@media screen and (max-width: 767px)
+    .quiz-header
+        &__title
+           //padding-right: 200px
+
+        &__items
+            justify-content: center !important
+            flex-wrap: wrap
+            text-align: center
+        &__item
+            margin: 0 1rem 1rem
+
+            &:first-child
+                margin-left: 0
+            &:last-child
+                margin-right: 0
