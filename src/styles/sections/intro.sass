@@ -1,10 +1,29 @@
 .intro
     // bug
-    overflow: hidden
+    // overflow: hidden
     position: relative
     padding-top: 60px
     display: flex
+    &::before
+        content: ''
+        position: absolute
+        top: 38%
+        left: 0
+        background: url('../assets/images/intro/intro__decor-left.png') no-repeat
+        width: 222px
+        height: 437px
+    &::after
+        display: none //
+        content: ''
+        position: absolute
+        top: 38%
+        right: -1%
+        background: url('../assets/images/intro/intro__decor-right.png') no-repeat
+        width: 247px
+        height: 516px
+
     &__house
+        display: none
         position: absolute
         width: 100%
         &-img
@@ -15,6 +34,16 @@
             height: 700px
             background: url('../assets/images/intro/intro__house3.png') no-repeat
             background-size: cover
+    &__btn
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            right: -99%
+            bottom: -184%
+            width: 236px
+            height: 153px
+            background: url('../assets/images/intro/intro__decor-btn.png') no-repeat
 
 @media screen and (max-width: 1600px)
     .intro

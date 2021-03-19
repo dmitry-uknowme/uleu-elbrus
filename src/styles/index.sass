@@ -1,4 +1,6 @@
 body
+    display: flex
+    flex-direction: column
     position: relative
     font-family: 'Montserrat'
     background: url('../assets/images/body__background.png')
@@ -8,8 +10,8 @@ body
 // *,*::after,*::before
 //     border: 1px solid red
 
-section,header,footer
-    overflow-x: hidden !important
+section
+    flex-grow: 1
 
 //components
 @import ./components/modal

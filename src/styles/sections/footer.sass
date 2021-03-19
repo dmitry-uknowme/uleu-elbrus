@@ -5,6 +5,25 @@
     height: 100px
     margin-top: 200px
     background: linear-gradient(to bottom,#fdfdfd,#eed5c8)
+    &::before
+        content: ''
+        position: absolute
+        left: -3%
+        width: 862px
+        bottom: -34%
+        height: 670px
+        background: url(../assets/images/footer/footer__decor-left.png) no-repeat
+        transform: scale(0.9)
+    &::after
+        content: ''
+        position: absolute
+        right: -3%
+        bottom: -23%
+        width: 400px
+        height: 450px
+        background: url(../assets/images/footer/footer__decor-right.png) no-repeat
+        transform: scale(0.9)
+
     &__menu
         margin-left: 34%
         width: 1000px
