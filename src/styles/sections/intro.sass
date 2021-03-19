@@ -1,9 +1,8 @@
 .intro
     // bug
-    // overflow: hidden
+    //overflow: hidden //что вылезает
     position: relative
     padding-top: 60px
-    display: flex
     &::before
         content: ''
         position: absolute
@@ -21,19 +20,15 @@
         background: url('../assets/images/intro/intro__decor-right.png') no-repeat
         width: 247px
         height: 516px
-
     &__house
-        display: none
         position: absolute
-        width: 100%
+        top: 0
+        right: -2%
+        width: 830px
+        height: 1175px
         &-img
-            position: absolute
-            top: -80px
-            right: -17%
-            width: 800px
-            height: 700px
-            background: url('../assets/images/intro/intro__house3.png') no-repeat
-            background-size: cover
+            width: 100%
+            height: 100%
     &__btn
         position: relative
         &::before
@@ -45,25 +40,81 @@
             height: 153px
             background: url('../assets/images/intro/intro__decor-btn.png') no-repeat
 
+@media screen and ( max-width: 1700px )
+    .intro
+        &__btn
+            &::before
+                display: none
+
 @media screen and (max-width: 1600px)
     .intro
+        &::before
+            display: none
         &__house
-            &-img
-                transform: scaleY(0.85)
-                width: 600px
+            transform: scale(0.85)
+            top: -16%
+            right: -5%
+        &__btn
+            &::before
+                display: none
 
 @media screen and (max-width: 1350px)
     .intro
         &__house
-            &-img
-                transform: scaleY(0.85)
-                width: 400px
+            transform: scale(0.7)
+            top: -32%
+            right: -13%
 
-@media screen and (max-width: 992px)
+@media screen and ( max-width: 1199px )
     .intro
         &__house
-            &-img
-                height: 400px
-                top: 0
-                //right: -80%
-                background-size: cover
+            transform: scale(0.6, 0.7)
+            top: -32%
+            right: -27%
+
+@media screen and ( max-width: 991px )
+    .intro
+        &__house
+            transform: scale(0.5, 0.6)
+            top: -46%
+            right: -45%
+
+@media screen and ( max-width: 767px )
+    .intro
+        &__house
+            transform: scale(0.4)
+            top: -41%
+            right: -46%
+
+@media screen and ( max-width: 576px )
+    .intro
+        &__house
+            transform: scale(0.3)
+            right: -80%
+            top: -31%
+
+@media screen and ( max-width: 507px )
+    .intro
+        &__house
+            // top: -40%
+
+// @media screen and ( max-width: 700px )
+//     .intro
+//         &__house
+//             right: -52%
+
+// @media screen and ( max-width: 576px )
+//     .intro
+//         &__house
+//             transform: scale(0.3)
+//             right: -90%
+//             top: -38%
+
+// @media screen and (max-width: 992px)
+//     .intro
+//         &__house
+//             &-img
+//                 height: 400px
+//                 top: 0
+//                 //right: -80%
+//                 background-size: cover
