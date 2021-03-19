@@ -9,11 +9,35 @@ export default () => {
 	const quizSuccess = document.querySelector('.quiz__success');
 	quizStage[currentStage - 1].classList.add('_active');
 
-	const modal = document.querySelector('modal');
+	const inputSize = document.querySelector('.quiz__input-size input');
+	const numberSize = document.querySelector('.quiz__answer-number span');
+	const incrementSize = document.querySelector('.quiz__answer-increment');
+	const decrementSize = document.querySelector('.quiz__answer-decrement');
+
+	const inputSizeHandler = () => {
+		inputSize.addEventListener('input', (e) => {
+			numberSize.innerHTML = e.target.value;
+		});
+		inputSize.addEventListener('change', (e) => {
+			numberSize.innerHTML = e.target.value;
+		});
+		incrementSize.addEventListener('click', () => {
+			inputSize.value++;
+			numberSize.innerHTML = inputSize.value;
+		});
+		decrementSize.addEventListener('click', () => {
+			inputSize.value--;
+			numberSize.innerHTML = inputSize.value;
+		});
+	};
 
 	const toNextStage = () => {
 		if (currentStage < maxStage) {
 			currentStage++;
+			if (currentStage === 3) {
+				inputSize.value = parseInt(numberSize.innerHTML);
+				inputSizeHandler();
+			}
 		}
 		if (currentStage >= maxStage) {
 			quizBox.classList.add('_modal');

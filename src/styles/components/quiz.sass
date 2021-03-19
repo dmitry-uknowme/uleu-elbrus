@@ -1,5 +1,21 @@
 .quiz
     margin-top: 150px
+    &__input-size
+        margin-top: 40px
+        position: relative
+        input
+            appearance: none
+            width: 100%
+        &::after
+            pointer-events: none
+            content: ''
+            position: absolute
+            top: -135%
+            left: 0
+            width: 100%
+            height: 50px
+            background: url('../assets/images/quiz/quiz__answer3.png')
+            background-repeat: no-repeat
     &__success
         transition: all 0.5s
         color: #e6b315
@@ -98,14 +114,20 @@
                 height: 250px
     &__stage
         &_size
-            .quiz__answer-title
+            .quiz__answer-number
+                text-transform: uppercase
+                font-weight: 700
                 font-size: 34px
-                span
-                    font-size: 14px
-
-            .quiz__answer-size
-                position: relative
-                width: 100%
+            .quiz__answer-subtitle
+                margin-top: 20px
+                text-transform: uppercase
+                text-align: center
+                font-size: 14px
+                font-weight: 700
+            .quiz__answer_size-header
+                display: flex
+                justify-content: space-around
+                align-items: center
 
     &__stage
         &_roof-material
@@ -171,7 +193,6 @@
         margin-top: 70px
         width: 350px
         font-size: 18px
-
 
 @media screen and (max-width: 992px)
     .quiz-header
