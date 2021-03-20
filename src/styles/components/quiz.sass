@@ -72,8 +72,8 @@
             height: 75px
             background: url('../assets/images/quiz/quiz__success-light-right.png')
     .modal__window
-        width: 60%
-        margin-top: 200px
+        //width: 60%
+        //margin-top: 200px
     &__stage
         transform: scale(0)
         // display: none
@@ -94,6 +94,8 @@
         text-transform: uppercase
         font-weight: 700
     &__box
+        min-height: 650px
+
         margin-top: 40px
         border-radius: 20px
         padding-top: 60px
@@ -101,7 +103,9 @@
         margin-bottom: 100px
         background: url('../assets/images/quiz/quiz__bg.png')
         background-size: cover
+
     &__box._modal
+        background: none
         box-shadow: none
         border: none
 
