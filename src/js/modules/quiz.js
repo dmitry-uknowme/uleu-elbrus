@@ -1,5 +1,5 @@
 export default () => {
-	let currentStage = 7;
+	let currentStage = 1;
 	const maxStage = 7;
 	const quizStage = document.querySelectorAll('.quiz__stage');
 	const nextBtn = document.querySelector('.quiz-box__btn');

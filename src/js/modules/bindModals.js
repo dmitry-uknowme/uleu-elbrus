@@ -7,13 +7,13 @@ export default () => {
 	const openModal = () => {
 		modalWindow.classList.add('_active');
 		modalOverlay.classList.add('_active');
-		body.classList.add('_active');
+		body.classList.add('_fixed');
 	};
 
 	const closeModal = () => {
 		modalWindow.classList.remove('_active');
 		modalOverlay.classList.remove('_active');
-		body.classList.remove('_active');
+		body.classList.remove('_fixed');
 	};
 
 	for (const btn of allButtons) {
