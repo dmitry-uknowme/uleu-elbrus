@@ -27,6 +27,15 @@
     &__menu
         margin-left: 34%
         max-width: 1000px
+    &__tagline
+        &_mobile
+            display: none
+    &__call
+        &_mobile
+            display: none
+    &__border
+        transform: rotate(90deg)
+        display: none
     &__decor-left
         position: absolute
         top: -392%
@@ -60,6 +69,45 @@
             display: none
         &__menu
             margin: auto
+
+@media screen and ( max-width: 767px )
+    .footer
+        padding: 30px
+        padding-bottom: 50px
+        height: auto
+        background: transparent
+        &::before
+            display: block
+            background: url(../assets/images/footer/footer__decor-left-mobile.png) no-repeat
+            width: 750px
+            height: 350px
+            top: 34%
+            left: -85%
+        &::after
+            display: block
+            background: url(../assets/images/footer/footer__decor-right-mobile.png) no-repeat
+            width: 446px
+            height: 438px
+            top: -43%
+            right: -39%
+        &__menu
+            flex-direction: column
+        &__info
+            margin-top: 20px
+            text-align: center
+        &__tagline
+            display: none
+            &_mobile
+                display: block
+        &__call
+            margin-top: 30px
+            display: none
+            &::before
+                display: none
+            &_mobile
+                display: block
+        &__border
+            display: block
 
 @media screen and ( max-width: 576px )
     .footer
