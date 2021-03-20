@@ -1,10 +1,36 @@
 .quiz
     &__input-size
+        margin: auto
+        max-width: 502px
         margin-top: 40px
         position: relative
         input
+            background: none
             appearance: none
+            width: 91%
+            margin-left: 9%
+            &:focus
+                border: none
+                background: none
+            &::-webkit-slider-thumb
+                box-shadow: 0px 0px 0px #000
+                // border: 1px solid #2497E3
+                height: 9px
+                width: 10px
+                // border-radius: 25px
+                // background: #A1D0FF
+                background: url('../assets/images/quiz/quiz__track.png')
+                cursor: pointer
+                -webkit-appearance: none
+                margin-top: 10px
+        &::before
+            content: ''
+            position: absolute
+            top: -135%
+            left: 0
+            background: url('../assets/images/quiz/quiz__track-bg.png')
             width: 100%
+            height: 40px
         &::after
             pointer-events: none
             content: ''
@@ -16,7 +42,6 @@
             background: url('../assets/images/quiz/quiz__answer3.png')
             background-repeat: no-repeat
     &__success
-
         color: #e6b315
         font-size: 34px
         text-align: center
@@ -116,6 +141,12 @@
                 height: 250px
     &__stage
         &_size
+            .quiz__answer-desc
+                text-align: center
+                font-size: 21px
+                text-transform: uppercase
+                font-weight: 700
+                color: #dcdcdc
             .quiz__answer-number
                 text-transform: uppercase
                 font-weight: 700

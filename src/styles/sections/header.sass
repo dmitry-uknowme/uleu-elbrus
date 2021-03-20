@@ -1,3 +1,9 @@
 .header
     height: 120px
     border-bottom: 1px solid #9f572e
+
+@media screen and ( max-width: 991px )
+    .header
+        &__call
+            &::before
+                display: none
