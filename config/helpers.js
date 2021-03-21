@@ -18,7 +18,8 @@ function generateHtmlFiles(templateDir, isDev) {
 		const extension = parts[1];
 		return new HtmlPlugin({
 			// filename: filename(name, 'html', isDev),  //dont work
-			filename: `${name}${!isDev ? '.[contenthash]' : ''}.html`,
+			// filename: `${name}${!isDev ? '.[contenthash]' : ''}.html`,
+			filename: `${name}.html`,
 			template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
 			// minify: {
 			// 	collapseWhitespace: !isDev,
