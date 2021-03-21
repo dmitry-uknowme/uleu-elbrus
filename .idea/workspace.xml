@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/header-intro-bg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/header.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/footer.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616314606847</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some fixs">
+      <created>1616314655715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616314655715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

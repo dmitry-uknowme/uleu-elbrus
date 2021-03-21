@@ -6,7 +6,7 @@
     background-size: cover
 .intro
     // bug
-    //overflow: hidden //что вылезает // за границу уходит, если на телефонах смотреть
+    overflow: hidden
     position: relative
     padding-top: 60px
     &::before
@@ -33,7 +33,7 @@
         width: 830px
         height: 1175px
         transform: scale(0.8)
-        top: -20%
+        top: -15%
         right: -8%
         &-img
             width: 100%
@@ -144,7 +144,7 @@
             display: none
         &__house
             transform: scale(0.80)
-            top: -20%
+            top: -15%
             right: -8%
         &__btn
             &::before
@@ -154,14 +154,14 @@
     .intro
         &__house
             transform: scale(0.7)
-            top: -32%
+            top: -25%
             right: -13%
 
 @media screen and ( max-width: 1199px )
     .intro
         &__house
             transform: scale(0.6, 0.7)
-            top: -32%
+            top: -25%
             right: -27%
     .house
         &__point
@@ -171,22 +171,23 @@
     .intro
         &__house
             transform: scale(0.5, 0.6)
-            top: -46%
+            top: -33%
             right: -45%
 
 @media screen and ( max-width: 767px )
     .intro
         &__house
-            transform: scale(0.4)
+            transform: scale(0.3)
+            right: -52%
             top: -41%
-            right: -46%
-
+    .intro__quiz-title
+        margin-bottom: 3rem
 @media screen and ( max-width: 576px )
     .intro
         &__house
             transform: scale(0.3)
             right: -80%
-            top: -31%
+            top: -38%
 
 @media screen and ( max-width: 507px )
     .intro
