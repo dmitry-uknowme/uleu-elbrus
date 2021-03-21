@@ -44,7 +44,7 @@
             display: flex
             align-items: center
             position: relative
-            &:first-child
+            &_roof
                 &::before
                     z-index: 1
                     content: ''
@@ -63,8 +63,11 @@
                     width: 244px
                     height: 276px
                     background: url('../assets/images/modal/modal__present.png')
-            &:nth-child(2)
+
+            &_water
                 margin-left: 20px
+                &::before,&::after
+                    display: none
 
             h4
                 font-size: 12px
@@ -89,6 +92,33 @@
         font-size: 10px
         font-weight: 500
 
+@media screen and ( max-width: 767px )
+    .modal
+        &__choose
+            flex-direction: column
+            &-item
+                &_roof
+                    &::after,&::before
+                        display: none
+                &_water
+                    &::after
+                        display: block
+                        z-index: 1
+                        content: ''
+                        position: absolute
+                        bottom: -59%
+                        left: 51%
+                        width: 244px
+                        height: 276px
+                        transform: scale(0.5)
+                    &::before
+                        display: block
+                        content: ''
+                        position: absolute
+                        right: 16%
+                        top: 55%
+                        width: 102px
+                        height: 50px
 
 @media screen and ( max-width: 576px )
     .modal

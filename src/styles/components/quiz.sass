@@ -80,15 +80,16 @@
         //width: 60%
         //margin-top: 200px
     &__stage
-        transform: scale(0)
-        // display: none
-        height: 0
-        width: 0
+        // transform: scale(0)
+        display: none
+        // height: 0
+        // width: 0
     &__stage._active
         transition: all 0.5s
-        transform: scale(1)
-        height: auto
-        width: auto
+        display: block
+        // transform: scale(1)
+        // height: auto
+        // width: auto
         // display: block
     .img-center
         display: block
@@ -100,8 +101,8 @@
         font-weight: 700
     &__box
         min-height: 497px
-        max-height: 497px
-        height: 497px
+        // max-height: 497px
+        // height: 497px
 
         margin-top: 40px
         border-radius: 20px
@@ -144,12 +145,6 @@
             text-transform: uppercase
             white-space: nowrap
 
-    // &__stage
-    //     &_house-type
-    //         .col-xxl-3
-    //             .quiz__answer
-    //                 .quiz__answer-title
-    //                     margin-top: 50px
     &__stage
         &_house-material
             .quiz__answer
@@ -306,7 +301,43 @@
             &:last-child
                 margin-right: 0
 
+    .quiz
+        &__title
+            font-size: 18px
+        &__question
+            font-size: 19px
+        &__answer
+            transform: scale(0.9)
+        &__answer-title
+            font-size: 12px
+
+        &__stage
+            &_house-type
+                .quiz__aswer
+                    height: 155px
+            &_house-material
+                .quiz__answer
+                    height: 180px
+            &_size
+                .quiz__answer
+                    &-desc
+                        font-size: 15px
+
+            &_facing
+                .quiz__answer
+                    height: 140px
+            &_deadline
+                .quiz__answer
+                    &-title
+                        font-size: 20px
+
 @media screen and ( max-width: 576px )
+    .quiz
+        &__stage
+            &_facing
+            .quiz__answer
+                transform: scale(0.75)
+
     .quiz-header
         &__title
             margin-top: 20px

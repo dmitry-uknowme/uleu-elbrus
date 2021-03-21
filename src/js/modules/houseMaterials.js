@@ -3,7 +3,9 @@ export default () => {
 	const allModals = document.querySelectorAll('.house__modal');
 	const modalHandler = (e, markClick) => {
 		const childModal = e.target.children[0];
+		console.log(e.target);
 		const isModalActive = childModal.classList.contains('_active');
+
 		if (!isModalActive) {
 			childModal.classList.add('_active');
 			// if (markClick) {
