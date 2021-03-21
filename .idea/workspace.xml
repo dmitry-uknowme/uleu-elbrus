@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/modules/bindModals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/bindModals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/modules/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/quiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/modal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/modal.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +21,15 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dima" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="dev" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="da3nil" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="uleu-elbrus" />
   </component>
   <component name="ProjectId" id="1pxmjQ2hnSsrooFno4QWsuCTDTi" />
   <component name="ProjectViewState">
@@ -51,8 +60,18 @@
       <option name="presentableId" value="Default" />
       <updated>1616133260142</updated>
       <workItem from="1616133262092" duration="762000" />
+      <workItem from="1616217054631" duration="1477000" />
+      <workItem from="1616232559990" duration="477000" />
+      <workItem from="1616263531641" duration="3098000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add header mobile responsive">
+      <created>1616139479696</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616139479697</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try to change house in intro (not working)" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to change house in intro (not working)" />
+    <MESSAGE value="add header mobile responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="add header mobile responsive" />
   </component>
 </project>

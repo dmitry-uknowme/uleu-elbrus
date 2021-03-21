@@ -5,7 +5,7 @@ import houseMaterials from './modules/houseMaterials';
 import quiz from './modules/quiz';
 
 document.addEventListener('DOMContentLoaded', () => {
-	bindModals();
+	// bindModals();
 	quiz();
 	houseMaterials();
 });
