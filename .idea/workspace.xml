@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
+    <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="add adaptive for house step 1: 434x - min">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/footer.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616314655715</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add adaptive for house step 1: 434x - min">
+      <created>1616315882164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616315882164</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +135,7 @@
     <MESSAGE value="add responsive quiz modal position" />
     <MESSAGE value="fix modal" />
     <MESSAGE value="some fixs" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fixs" />
+    <MESSAGE value="add adaptive for house step 1: 434x - min" />
+    <option name="LAST_COMMIT_MESSAGE" value="add adaptive for house step 1: 434x - min" />
   </component>
 </project>
