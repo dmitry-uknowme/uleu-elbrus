@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/header.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616268249050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix modal">
+      <created>1616310643484</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616310643484</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +115,7 @@
     <MESSAGE value="try to change house in intro (not working)" />
     <MESSAGE value="add header mobile responsive" />
     <MESSAGE value="add responsive quiz modal position" />
-    <option name="LAST_COMMIT_MESSAGE" value="add responsive quiz modal position" />
+    <MESSAGE value="fix modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix modal" />
   </component>
 </project>
