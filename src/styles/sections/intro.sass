@@ -1,6 +1,12 @@
+.header-intro-bg
+    padding-bottom: 100px
+    background: url('../assets/images/header-intro-bg.png')
+    background-repeat: no-repeat
+    background-position: center top
+    background-size: cover
 .intro
     // bug
-    //overflow: hidden //что вылезает
+    overflow: hidden
     position: relative
     padding-top: 60px
     &::before
@@ -12,7 +18,7 @@
         width: 222px
         height: 437px
     &::after
-        display: none //
+        display: none
         content: ''
         position: absolute
         top: 38%
@@ -22,10 +28,13 @@
         height: 516px
     &__house
         position: absolute
-        top: 0
-        right: -2%
+        //top: 0
+        //right: -2%
         width: 830px
         height: 1175px
+        transform: scale(0.8)
+        top: -15%
+        right: -8%
         &-img
             width: 100%
             height: 100%
@@ -134,9 +143,9 @@
         &::before
             display: none
         &__house
-            transform: scale(0.85)
-            top: -16%
-            right: -5%
+            transform: scale(0.80)
+            top: -15%
+            right: -8%
         &__btn
             &::before
                 display: none
@@ -145,14 +154,14 @@
     .intro
         &__house
             transform: scale(0.7)
-            top: -32%
+            top: -25%
             right: -13%
 
 @media screen and ( max-width: 1199px )
     .intro
         &__house
             transform: scale(0.6, 0.7)
-            top: -32%
+            top: -25%
             right: -27%
     .house
         &__point
@@ -162,28 +171,52 @@
     .intro
         &__house
             transform: scale(0.5, 0.6)
-            top: -46%
+            top: -33%
             right: -45%
 
 @media screen and ( max-width: 767px )
     .intro
         &__house
-            transform: scale(0.4)
+            transform: scale(0.3)
+            right: -52%
             top: -41%
-            right: -46%
-
+    .intro__quiz-title
+        margin-bottom: 3rem
 @media screen and ( max-width: 576px )
     .intro
         &__house
             transform: scale(0.3)
             right: -80%
-            top: -31%
+            top: -38%
 
 @media screen and ( max-width: 507px )
     .intro
         &__house
             // top: -40%
 
+@media screen and ( max-width: 434px )
+    .intro
+        &__house
+            right: -100%
+
+
+@media screen and ( max-width: 389px )
+    .intro
+        &__house
+            right: -115%
+            //top: -32%
+
+@media screen and ( max-width: 357px )
+    .intro
+        &__house
+            right: -128%
+            //top: -32%
+
+@media screen and ( max-width: 340px )
+    .intro
+        &__house
+            right: -140%
+            //top: -32%
 // @media screen and ( max-width: 700px )
 //     .intro
 //         &__house
@@ -204,3 +237,9 @@
 //                 top: 0
 //                 //right: -80%
 //                 background-size: cover
+
+
+.intro
+    &__house
+        top: 61px
+        transform-origin: top center
