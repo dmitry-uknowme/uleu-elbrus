@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/btn.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/btn.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/menu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/modal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/modal.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/footer.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
