@@ -5,14 +5,17 @@
         margin-top: 40px
         position: relative
         input
+            outline: none !important
             background: none
             appearance: none
             width: 91%
             margin-left: 9%
             &:focus
+                outline: none !important
                 border: none
                 background: none
             &::-webkit-slider-thumb
+                outline: none !important
                 box-shadow: 0px 0px 0px #000
                 // border: 1px solid #2497E3
                 height: 9px
@@ -72,6 +75,7 @@
             height: 75px
             background: url('../assets/images/quiz/quiz__success-light-right.png')
     .modal__window
+        max-width: 468px
         //width: 60%
         //margin-top: 200px
     &__stage
@@ -102,7 +106,7 @@
         padding-bottom: 40px
         margin-bottom: 100px
         background: url('../assets/images/quiz/quiz__bg.png')
-        background-size: cover
+        background-size: 100% 100%
 
     &__box._modal
         background: none
@@ -186,6 +190,7 @@
 
     &__stage
         &_deadline
+            padding: 0 1rem
             .quiz__answer
                 margin-top: 40px
                 height: auto
