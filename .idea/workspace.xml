@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
+    <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="add adaptive for house step 1: 434x - min">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/modules/bindModals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/bindModals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/modules/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/modal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/modal.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="dev" />
@@ -62,7 +67,7 @@
       <workItem from="1616133262092" duration="762000" />
       <workItem from="1616217054631" duration="1477000" />
       <workItem from="1616232559990" duration="477000" />
-      <workItem from="1616263531641" duration="3098000" />
+      <workItem from="1616263531641" duration="6954000" />
     </task>
     <task id="LOCAL-00002" summary="add header mobile responsive">
       <created>1616139479696</created>
@@ -71,7 +76,42 @@
       <option name="project" value="LOCAL" />
       <updated>1616139479697</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add responsive quiz modal position">
+      <created>1616268249050</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616268249050</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix modal">
+      <created>1616310643484</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616310643484</updated>
+    </task>
+    <task id="LOCAL-00005" summary="some fixs">
+      <created>1616314606847</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616314606847</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some fixs">
+      <created>1616314655715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616314655715</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add adaptive for house step 1: 434x - min">
+      <created>1616315882164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616315882164</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +132,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try to change house in intro (not working)" />
     <MESSAGE value="add header mobile responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="add header mobile responsive" />
+    <MESSAGE value="add responsive quiz modal position" />
+    <MESSAGE value="fix modal" />
+    <MESSAGE value="some fixs" />
+    <MESSAGE value="add adaptive for house step 1: 434x - min" />
+    <option name="LAST_COMMIT_MESSAGE" value="add adaptive for house step 1: 434x - min" />
   </component>
 </project>

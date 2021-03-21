@@ -12,7 +12,9 @@
         box-shadow: none
 
 .btn._calc
+    outline: none !important
     padding-right: 60px
+    white-space: nowrap
     &::after
         content: ''
         position: absolute
@@ -22,6 +24,10 @@
         height: 25px
         width: 25px
         background: url('../assets/images/btn/btn__calc.png')
+
+    &:focus
+        outline: none !important
+        box-shadow: none !important
 
 .btn._next
     color: #000
@@ -51,3 +57,10 @@
         width: 56px
         height: 70px
         background: url('../assets/images/btn/btn__file.png')
+
+
+
+@media screen and (max-width: 550px)
+    .btn._calc
+        width: fit-content
+        font-size: 12px
