@@ -11,14 +11,11 @@
 		<meta name="googlebot" content="index, follow" />
 		<meta name="google" content="notranslate" />
 		<meta name="format-detection" content="telephone=no" />
-		<title>Webpack</title>
+		<title>ЭльбрусДом</title>
 	</head>
 	<body>
 		<%= _.template(require('../includes/modal.html'))() %>
-		<div class="header-intro-bg">
-			<%= _.template(require('../includes/header.html'))() %>
-			<%= _.template(require('../includes/intro.html'))() %>
-		</div>
+		<div class="header-intro-bg"><%= _.template(require('../includes/header.html'))() %> <%= _.template(require('../includes/intro.html'))() %></div>
 		<%=_.template(require('../includes/quiz.html'))() %> <%= _.template(require('../includes/footer.html'))() %>
 	</body>
 </html>

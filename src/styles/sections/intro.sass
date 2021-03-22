@@ -85,18 +85,27 @@
             height: 3px
             background: #000
             transform: rotate(134deg)
+    &__roof:hover .house__modal
+        transform: scale(1)
+        transition: all 0.5s
     &__window
         top: 22%
         left: -4%
         border: 2px solid #fff
         &::before
             background: #ff9c00
+    &__window:hover .house__modal
+        transform: scale(1)
+        transition: all 0.5s
     &__wall
         bottom: 0
         right: 37%
         border: 2px solid #fff
         &::before
             background: #ff9c00
+    &__wall:hover .house__modal
+        transform: scale(1)
+        transition: all 0.5s
     &__modal
         // transition: all 0.5s //почему-то окно появляется, а не должно
         transform: scale(0)
