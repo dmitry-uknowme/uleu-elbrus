@@ -2,30 +2,58 @@ import { quizSlider } from './sliders';
 
 export default () => {
 	const nextBtn = document.querySelector('.swiper-button-next');
+	const modalBtn = document.querySelector('.modal__btn');
 	const quizTitle = document.querySelector('.quiz__title');
 	const quizAnswers = document.querySelectorAll('.quiz__answer');
 	const quizBox = document.querySelector('.quiz__box');
 	const quizSuccess = document.querySelector('.quiz__success');
+	const inputSize = document.querySelector('.quiz__input-size input');
+	const modalName = document.querySelector('.modal__input-name');
+	const modalPhone = document.querySelector('.modal__input-phone');
 	const choosedAnswers = [];
+
+	const closest = (el, sel) => {
+		if (el != null) return el.matches(sel) ? el : el.querySelector(sel) || closest(el.parentNode, sel);
+	};
 
 	for (const answer of quizAnswers) {
 		answer.addEventListener('click', (e) => {
-			if (e.target.children[1]) {
-				choosedAnswers.push(e.target.children[1].textContent);
+			if (quizSlider.realIndex + 1 !== 3 || quizSlider.realIndex + 1 !== 7) {
+				const quizQuestion = closest(e.target, '.quiz__question').textContent.trim();
+				const quizValue = closest(e.target, '.quiz__answer-title').textContent.trim();
+				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
 			}
-			// choosedAnswers.push(e.target.closest('.quiz__answer-title'));
 			quizSlider.slideNext();
 		});
 	}
 	quizSlider.on('slideChange', () => {
 		if (quizSlider.realIndex + 1 === 3) {
+			nextBtn.addEventListener('click', (e) => {
+				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').textContent.trim();
+				const quizValue = parseInt(inputSize.value);
+				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
+			});
 			inputSizeHandler();
 		} else if (quizSlider.realIndex + 1 === 7) {
+			modalBtn.addEventListener('click', (e) => {
+				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
+				console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
+
+				fetch('https://reqres.in/api/users'),
+					{
+						method: 'POST',
+						body: JSON.stringify(choosedAnswers),
+					};
+				console.log(JSON.stringify(choosedAnswers));
+				// .then((response) => response.json())
+				// .then((json) => console.log(json))
+				// .catch((err) => console.error(err));
+			});
 			quizBox.classList.add('_modal');
 			quizSuccess.classList.add('_active');
 			nextBtn.style.opacity = '0';
 			quizTitle.style.opacity = '0';
-			console.log('You choosed this items:', choosedAnswers);
+			// console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
 		}
 	});
 };
