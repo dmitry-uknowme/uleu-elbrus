@@ -38,13 +38,13 @@ export default () => {
 			modalBtn.addEventListener('click', (e) => {
 				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
 				console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
+				generateMessage(choosedAnswers);
 
 				fetch('https://reqres.in/api/users'),
 					{
 						method: 'POST',
 						body: JSON.stringify(choosedAnswers),
 					};
-				console.log(JSON.stringify(choosedAnswers));
 				// .then((response) => response.json())
 				// .then((json) => console.log(json))
 				// .catch((err) => console.error(err));
@@ -57,35 +57,6 @@ export default () => {
 		}
 	});
 };
-
-// const toNextStage = () => {                                        //replaced with swiper
-// 	if (currentStage < maxStage) {
-// 		currentStage++;
-// 		if (currentStage === 3) {
-// 			// inputSize.value = parseInt(numberSize.innerHTML);
-// 			inputSizeContainer.style.width = `${inputSize.value * 1.09}px`;
-// 			inputSizeHandler();
-// 		}
-// 	}
-// 	if (currentStage >= maxStage) {
-// 		quizBox.classList.add('_modal');
-// 		quizSuccess.classList.add('_active');
-// 		nextBtn.style.opacity = '0';
-// 		quizTitle.style.opacity = '0';
-// 	}
-// 	const activeStage = document.querySelector('.quiz__stage._active');
-// 	if (activeStage) {
-// 		activeStage.classList.remove('_active');
-// 	}
-// 	quizStage[currentStage - 1].classList.add('_active');
-// };
-
-// nextBtn.addEventListener('click', toNextStage);
-
-// for (const answer of quizAnswers) {
-// 	answer.addEventListener('click', toNextStage);
-// }
-// };
 
 export const inputSizeHandler = () => {
 	const inputSizeContainer = document.querySelector('.quiz__input-size');
@@ -112,4 +83,32 @@ export const inputSizeHandler = () => {
 		inputSize.value--;
 		numberSize.innerHTML = inputSize.value;
 	});
+};
+
+export const generateMessage = (choosedAnswers) => {
+	const [user, ...answers] = choosedAnswers;
+
+	let message = `
+					<h1>Заявка на обратный звонок от elbrus-dom.ru</h1>
+					<hr>
+					<p>
+						<b>Имя:</b>
+						<span>${user.name}</span>
+					</p>
+					<p>
+						<b>Номер телефона:</b>
+						<span>${user.phone}</span>
+					</p>	
+			
+				`;
+
+	for (const answer of answers) {
+		message += `
+						<p>
+							<b>${answer.question}</b>
+							<span>${answer.answer}</span>
+						</p>
+					`;
+	}
+	console.log(message);
 };

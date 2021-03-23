@@ -8,6 +8,5 @@ import { quizSlider } from './modules/sliders';
 document.addEventListener('DOMContentLoaded', () => {
 	// bindModals();
 	quiz();
-	console.log(quizSlider);
 	houseMaterials();
 });
