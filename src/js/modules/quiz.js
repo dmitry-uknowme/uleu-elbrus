@@ -65,16 +65,16 @@ export const inputSizeHandler = () => {
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
 
-	inputSizeContainer.style.width = `${inputSize.value - 60}px`;
-	// inputSizeContainer.style.right = `${510 - inputSize.value}px`;
+	const k = 500 / 453;
+	console.log(k);
+
+	inputSizeContainer.style.width = `${inputSize.value - 60 * k}px`;
+	// inputSizeContainer.style.right = `${inputSize.value - 60 * k}px`;
 	console.log('width');
 
 	inputSize.addEventListener('input', (e) => {
-		console.log(e.target.value);
-		console.log(inputSizeContainer.style.backgroundPositionX);
 		e.preventDefault();
 		numberSize.innerHTML = e.target.value;
-		// inputSizeContainer.style.backgroundPositionX = `-${e.target.value * 1.12}px`;
 		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
 		// inputSizeContainer.style.right = `${510 - inputSize.value}px`;
 
@@ -83,12 +83,12 @@ export const inputSizeHandler = () => {
 	});
 	incrementSize.addEventListener('click', () => {
 		inputSize.value++;
-		inputSizeContainer.style.width = `${inputSize.value}px`;
-		// inputSize.style.width = `${inputSize.value}px`;
+		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
 		numberSize.innerHTML = inputSize.value;
 	});
 	decrementSize.addEventListener('click', () => {
 		inputSize.value--;
+		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
 		numberSize.innerHTML = inputSize.value;
 	});
 };
