@@ -1,16 +1,43 @@
 .quiz
     margin-top: 200px
     &__input-size
+        height: 80px
         margin: auto
         max-width: 502px
         margin-top: 40px
         position: relative
+        &-base
+            pointer-events: none
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 13%
+            height: 72px
+            background: url('../assets/images/quiz/quiz__track-base.png')
+            background-repeat: no-repeat
+        &-line
+            // background-position-x: -448px
+            pointer-events: none
+            content: ''
+            position: absolute
+            top: 75%
+            left: 13%
+            max-width: 89%
+            z-index: -1
+            height: 72px
+            background: url('../assets/images/quiz/quiz__track-line.png')
+            background-repeat: no-repeat
         input
+            margin-left: -5px
+            appearance: none
+            position: absolute
+            bottom: 5%
             outline: none !important
             background: none
-            appearance: none
-            width: 91%
-            margin-left: 9%
+            left: 13%
+            width: 87%
+            transform: scaleX(1.07)
             &:focus
                 outline: none !important
                 border: none
@@ -27,24 +54,24 @@
                 cursor: pointer
                 -webkit-appearance: none
                 margin-top: 10px
-        &::before
-            content: ''
-            position: absolute
-            top: -135%
-            left: 0
-            background: url('../assets/images/quiz/quiz__track-bg.png')
-            width: 100%
-            height: 40px
-        &::after
-            pointer-events: none
-            content: ''
-            position: absolute
-            top: -135%
-            left: 0
-            width: 100%
-            height: 50px
-            background: url('../assets/images/quiz/quiz__answer3.png')
-            background-repeat: no-repeat
+        // &::before
+        //     content: ''
+        //     position: absolute
+        //     top: -135%
+        //     left: 0
+        //     background: url('../assets/images/quiz/quiz__track-bg.png')
+        //     width: 100%
+        //     height: 40px
+        // &::after
+        //     pointer-events: none
+        //     content: ''
+        //     position: absolute
+        //     top: -135%
+        //     left: 0
+        //     width: 100%
+        //     height: 50px
+        //     background: url('../assets/images/quiz/quiz__answer3.png')
+        //     background-repeat: no-repeat
     &__success
         color: #e6b315
         font-size: 34px
@@ -165,6 +192,7 @@
     &__stage
         &_size
             .quiz__answer-desc
+                margin-top: 40px
                 text-align: center
                 font-size: 21px
                 text-transform: uppercase

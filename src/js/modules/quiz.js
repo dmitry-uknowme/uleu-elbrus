@@ -59,19 +59,27 @@ export default () => {
 };
 
 export const inputSizeHandler = () => {
-	const inputSizeContainer = document.querySelector('.quiz__input-size');
+	const inputSizeContainer = document.querySelector('.quiz__input-size-line');
 	const inputSize = document.querySelector('.quiz__input-size input');
 	const numberSize = document.querySelector('.quiz__answer-number span');
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
+
+	inputSizeContainer.style.width = `${inputSize.value - 60}px`;
+	// inputSizeContainer.style.right = `${510 - inputSize.value}px`;
+	console.log('width');
+
 	inputSize.addEventListener('input', (e) => {
+		console.log(e.target.value);
+		console.log(inputSizeContainer.style.backgroundPositionX);
 		e.preventDefault();
 		numberSize.innerHTML = e.target.value;
-		inputSizeContainer.style.width = `${inputSize.value * 1.09 - 42}px`;
-	});
-	inputSize.addEventListener('change', (e) => {
-		numberSize.innerHTML = e.target.value;
-		inputSizeContainer.style.width = `${inputSize.value * 1.09}px`;
+		// inputSizeContainer.style.backgroundPositionX = `-${e.target.value * 1.12}px`;
+		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
+		// inputSizeContainer.style.right = `${510 - inputSize.value}px`;
+
+		// inputSizeContainer.style.width = `${inputSize.value - 15 * 1.1}px`;
+		// inputSizeContainer.style.right = `${500 - inputSize.value * 1.1 - 80}px`;
 	});
 	incrementSize.addEventListener('click', () => {
 		inputSize.value++;

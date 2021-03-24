@@ -5,6 +5,7 @@ const path = require('path');
 const { HotModuleReplacementPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const HtmlHotPlugin = require('html-webpack-hot-plugin');
 
 const { styleHandler, filename, generateHtmlFiles } = require('./helpers');
 
@@ -23,6 +24,10 @@ const devConfig = {
 		contentBase: path.resolve(__dirname, '../build'),
 		port: 3000,
 		open: true,
+		// hot: true,
+		// before: (app, server) => {
+		// 	new HtmlHotPlugin({ hot: true }).setDevServer(server);
+		// },
 	},
 
 	target: 'web',
