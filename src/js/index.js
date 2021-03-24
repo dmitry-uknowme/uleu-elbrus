@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/swiper-bundle.css';
 import '../styles/index.sass';
-import bindModals from './modules/bindModals';
 import houseMaterials from './modules/houseMaterials';
 import quiz from './modules/quiz';
+import Swiper from 'swiper';
 import { quizSlider } from './modules/sliders';
 
 document.addEventListener('DOMContentLoaded', () => {
-	// bindModals();
 	quiz();
 	houseMaterials();
 });

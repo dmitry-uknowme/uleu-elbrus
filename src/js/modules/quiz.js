@@ -7,7 +7,7 @@ export default () => {
 	const quizAnswers = document.querySelectorAll('.quiz__answer');
 	const quizBox = document.querySelector('.quiz__box');
 	const quizSuccess = document.querySelector('.quiz__success');
-	const inputSize = document.querySelector('.quiz__input-size input');
+	const inputSizeTrack = document.querySelector('.quiz__input-size input');
 	const modalName = document.querySelector('.modal__input-name');
 	const modalPhone = document.querySelector('.modal__input-phone');
 	const choosedAnswers = [];
@@ -30,10 +30,10 @@ export default () => {
 		if (quizSlider.realIndex + 1 === 3) {
 			nextBtn.addEventListener('click', (e) => {
 				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').textContent.trim();
-				const quizValue = parseInt(inputSize.value);
+				const quizValue = parseInt(inputSizeTrack.value);
 				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
 			});
-			inputSizeHandler();
+			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
 			modalBtn.addEventListener('click', (e) => {
 				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
@@ -58,9 +58,10 @@ export default () => {
 	});
 };
 
-export const inputSizeHandler = () => {
-	const inputSizeContainer = document.querySelector('.quiz__input-size-line');
-	const inputSize = document.querySelector('.quiz__input-size input');
+export const inputSize = () => {
+	const inputSizeContainer = document.querySelector('.quiz__input-size');
+	const inputSizeLine = document.querySelector('.quiz__input-size-line');
+	const inputSizeTrack = document.querySelector('.quiz__input-size input');
 	const numberSize = document.querySelector('.quiz__answer-number span');
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
@@ -68,28 +69,26 @@ export const inputSizeHandler = () => {
 	const k = 500 / 453;
 	console.log(k);
 
-	inputSizeContainer.style.width = `${inputSize.value - 60 * k}px`;
-	// inputSizeContainer.style.right = `${inputSize.value - 60 * k}px`;
-	console.log('width');
+	inputSizeTrack.addEventListener('change', (e) => {
+		console.log('change');
+		numberSize.innerHTML = e.target.value;
+		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
+	});
 
-	inputSize.addEventListener('input', (e) => {
+	inputSizeTrack.addEventListener('input', (e) => {
 		e.preventDefault();
 		numberSize.innerHTML = e.target.value;
-		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
-		// inputSizeContainer.style.right = `${510 - inputSize.value}px`;
-
-		// inputSizeContainer.style.width = `${inputSize.value - 15 * 1.1}px`;
-		// inputSizeContainer.style.right = `${500 - inputSize.value * 1.1 - 80}px`;
+		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
 	});
 	incrementSize.addEventListener('click', () => {
-		inputSize.value++;
-		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
-		numberSize.innerHTML = inputSize.value;
+		inputSizeTrack.value++;
+		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
+		numberSize.innerHTML = inputSizeTrack.value;
 	});
 	decrementSize.addEventListener('click', () => {
-		inputSize.value--;
-		inputSizeContainer.style.width = `${inputSize.value - 60}px`;
-		numberSize.innerHTML = inputSize.value;
+		inputSizeTrack.value--;
+		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
+		numberSize.innerHTML = inputSizeTrack.value;
 	});
 };
 
