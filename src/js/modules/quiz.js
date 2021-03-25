@@ -1,7 +1,7 @@
 import { quizSlider } from './sliders';
 
 export default () => {
-	const nextBtn = document.querySelector('.swiper-button-next');
+	const nextBtn = document.querySelector('.quiz__btn');
 	const modalBtn = document.querySelector('.modal__btn');
 	const quizTitle = document.querySelector('.quiz__title');
 	const quizAnswers = document.querySelectorAll('.quiz__answer');
@@ -66,20 +66,39 @@ export const inputSize = () => {
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
 
-	const k = 500 / 453;
-	console.log(k);
+	const maxWidth = 300;
+	const maxValue = 500;
+
+	const sizeFill = setInterval(() => {
+		if (inputSizeTrack.value >= 50) {
+			clearInterval(sizeFill);
+			return false;
+		}
+		inputSizeTrack.value++;
+		numberSize.innerHTML = inputSizeTrack.value;
+		inputSizeLine.style.width = `${(inputSizeTrack.value * maxWidth) / maxValue}px`;
+	}, 50);
+
+	const inputSizeHandler = (e) => {
+		if (e.target.value >= 271) {
+			inputSizeTrack.style.marginLeft = '13%';
+		} else if (e.target.value < 271) {
+			inputSizeTrack.style.marginLeft = '11%';
+		} else if (e.target.value >= 30) {
+			inputSizeTrack.style.marginLeft = '11%';
+		} else if (e.target.value < 30) {
+			inputSizeTrack.style.marginLeft = '12%';
+		}
+
+		numberSize.innerHTML = e.target.value;
+		inputSizeLine.style.width = `${(e.target.value * maxWidth) / maxValue}px`;
+	};
 
 	inputSizeTrack.addEventListener('change', (e) => {
-		console.log('change');
 		numberSize.innerHTML = e.target.value;
-		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
 	});
 
-	inputSizeTrack.addEventListener('input', (e) => {
-		e.preventDefault();
-		numberSize.innerHTML = e.target.value;
-		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
-	});
+	inputSizeTrack.addEventListener('input', inputSizeHandler);
 	incrementSize.addEventListener('click', () => {
 		inputSizeTrack.value++;
 		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;

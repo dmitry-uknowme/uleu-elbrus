@@ -10,58 +10,69 @@
             pointer-events: none
             content: ''
             position: absolute
-            top: 0
-            left: 0
+            top: -78%
+            left: 2%
             width: 13%
             height: 72px
             background: url('../assets/images/quiz/quiz__track-base.png')
             background-repeat: no-repeat
         &-line
-            // background-position-x: -448px
-            pointer-events: none
-            content: ''
-            position: absolute
-            top: 75%
-            left: 13%
-            max-width: 89%
-            z-index: -1
-            height: 72px
-            background: url('../assets/images/quiz/quiz__track-line.png')
-            background-repeat: no-repeat
+            height: 20px
+            margin-left: 13%
+            margin-top: 16%
+            // // background-position-x: -448px
+            // content: ''
+            // position: absolute
+            // top: 75%
+            // left: 13%
+            // max-width: 89%
+            // z-index: -1
+            // height: 72px
+            background: url('../assets/images/quiz/quiz__track-line.png') no-repeat
+            // background-repeat: no-repeat
         input
-            margin-left: -5px
+            display: block
+            margin-top: -3%
+            cursor: grab
+            width: 300px
+            margin-left: 11%
             appearance: none
-            position: absolute
-            bottom: 5%
-            outline: none !important
-            background: none
-            left: 13%
-            width: 87%
-            transform: scaleX(1.07)
+            // margin-left: -5px
+
+            // position: absolute
+            // bottom: 5%
+            // outline: none !important
+            // background: none
+            // left: 13%
+            // width: 87%
+            // transform: scaleX(1.07)
             &:focus
                 outline: none !important
-                border: none
-                background: none
+                // border: none
+                // background: none
             &::-webkit-slider-thumb
-                outline: none !important
-                box-shadow: 0px 0px 0px #000
-                // border: 1px solid #2497E3
+                // transform: translateX(-50%)
+                appearance: none
+                // outline: none !important
+                // box-shadow: 0px 0px 0px #000
+                // // border: 1px solid #2497E3
                 height: 9px
                 width: 10px
-                // border-radius: 25px
-                // background: #A1D0FF
+                // // border-radius: 25px
+                // // background: #A1D0FF
                 background: url('../assets/images/quiz/quiz__track.png')
-                cursor: pointer
-                -webkit-appearance: none
-                margin-top: 10px
-        // &::before
-        //     content: ''
-        //     position: absolute
-        //     top: -135%
-        //     left: 0
-        //     background: url('../assets/images/quiz/quiz__track-bg.png')
-        //     width: 100%
-        //     height: 40px
+                // cursor: pointer
+                // -webkit-appearance: none
+                // margin-top: 10px
+        &::before
+            content: ''
+            position: absolute
+            top: -39%
+            left: 5%
+            background: url('../assets/images/quiz/quiz__track-bg.png') no-repeat
+            width: 100%
+            height: 40px
+            z-index: -1
         // &::after
         //     pointer-events: none
         //     content: ''
@@ -107,6 +118,7 @@
         //width: 60%
         //margin-top: 200px
     &__stage
+        overflow: hidden
         // transform: scale(0)
         // display: none
         // height: 0
@@ -129,11 +141,6 @@
         text-transform: uppercase
         font-weight: 700
     &__box
-        max-height: 600px
-        min-height: 497px
-        // max-height: 497px
-        // height: 497px
-
         margin-top: 40px
         border-radius: 20px
         padding-top: 20px
@@ -154,15 +161,9 @@
         text-align: center
         text-transform: uppercase
         font-weight: 700
-    .swiper-button-next
-        position: absolute
-        bottom: 30%
-        left: 50%
-        transform: translateX(-50%)
-        color: transparent
-        &__btn
 
-        // width: 150px
+    &__btn
+        margin-top: 50px
     &__answers
         // margin-top: 30px
     &__answer
@@ -192,7 +193,7 @@
     &__stage
         &_size
             .quiz__answer-desc
-                margin-top: 40px
+                margin-top: -40px
                 text-align: center
                 font-size: 21px
                 text-transform: uppercase
@@ -379,6 +380,12 @@
                         font-size: 20px
 
 @media screen and ( max-width: 576px )
+    .quiz__input
+        &-size
+            transform: scale(0.7,0.9)
+            &-base
+                width: 16%
+
     .quiz
         &__stage
             &_facing
