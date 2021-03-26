@@ -1,5 +1,6 @@
 const path = require('path');
 
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const { PROJECT } = require('./helpers');
@@ -40,7 +41,13 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [new CleanWebpackPlugin()],
+	plugins: [
+		new CleanWebpackPlugin(),
+		new CopyPlugin({
+			patterns: [{ from: './src/server', to: 'server' }],
+		}),
+	],
+
 	resolve: {
 		extensions: ['.js'],
 		alias: {
