@@ -327,12 +327,17 @@
                 margin-right: 0
 
 @media screen and (max-width: 767px)
+    .quiz__answers_mobile
+        .row > div
+            height: 100%
+
     .quiz-header
         &__title
             display: none
             &_mobile
                 line-height: 1.3
                 display: block
+
 
         &__items
             justify-content: center !important
@@ -342,9 +347,11 @@
             margin: 0 1rem 1rem
 
             &:first-child
-                margin-left: 0
+                margin-left: 1.5rem
+                margin-right: 1.5rem
             &:last-child
-                margin-right: 0
+                margin-left: 1.5rem
+                margin-right: 1.5rem
 
     .quiz
         margin-top: 80px
@@ -363,6 +370,7 @@
                 display: block
 
         &__answer
+            height: 148px
             &-img
                 transform: scale(0.9)
         &__answer-title
@@ -374,7 +382,8 @@
                     height: 155px
             &_house-material
                 .quiz__answer
-                    height: 180px
+                    //height: 180px
+                    height: 100%
             &_size
                 .quiz__answer
                     &-desc
