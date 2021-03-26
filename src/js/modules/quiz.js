@@ -10,6 +10,7 @@ export default () => {
 	const inputSizeTrack = document.querySelector('.quiz__input-size input');
 	const modalName = document.querySelector('.modal__input-name');
 	const modalPhone = document.querySelector('.modal__input-phone');
+	const modalChoose = document.querySelector('.modal__choose');
 	const choosedAnswers = [];
 
 	const closest = (el, sel) => {
@@ -35,7 +36,20 @@ export default () => {
 			});
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
+			for (const present of modalChoose.children) {
+				console.log(present);
+				present.addEventListener('click', (e) => {
+					const activePresent = document.querySelector('.modal__choose-item > h4._active');
+					console.log(activePresent);
+					if (activePresent) {
+						activePresent.classList.remove('_active');
+					}
+					e.target.children[1].classList.add('_active');
+				});
+			}
 			modalBtn.addEventListener('click', (e) => {
+				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
+				choosedAnswers.unshift({ present });
 				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
 				console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
 				generateMessage(choosedAnswers);
@@ -112,7 +126,7 @@ export const inputSize = () => {
 };
 
 export const generateMessage = (choosedAnswers) => {
-	const [user, ...answers] = choosedAnswers;
+	const [user, present, ...answers] = choosedAnswers;
 
 	let message = `
 					<h1>Заявка на обратный звонок от elbrus-dom.ru</h1>
@@ -134,7 +148,14 @@ export const generateMessage = (choosedAnswers) => {
 							<b>${answer.question}</b>
 							<span>${answer.answer}</span>
 						</p>
+						
 					`;
 	}
+	message += `
+						<p>
+							<b>Вы выбрали подарок:</b>
+							<span>${present.present}</span>
+						</p>
+				`;
 	console.log(message);
 };
