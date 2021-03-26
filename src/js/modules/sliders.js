@@ -16,4 +16,5 @@ export const quizSlider = new Swiper('.quiz__container', {
 	observer: true,
 	resizeObserver: true,
 	autoHeight: true,
+	roundLengths: true,
 });

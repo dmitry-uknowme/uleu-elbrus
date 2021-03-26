@@ -119,6 +119,7 @@
         //margin-top: 200px
     &__stage
         overflow: hidden
+
         // transform: scale(0)
         // display: none
         // height: 0
@@ -165,6 +166,8 @@
     &__btn
         margin-top: 50px
     &__answers
+        &_mobile
+            display: none
         // margin-top: 30px
     &__answer
         cursor: pointer
@@ -353,6 +356,12 @@
             font-size: 18px
         &__question
             font-size: 19px
+        &__answers
+            &_desktop
+                display: none
+            &_mobile
+                display: block
+
         &__answer
             &-img
                 transform: scale(0.9)
