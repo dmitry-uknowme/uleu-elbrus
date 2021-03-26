@@ -82,8 +82,8 @@
         border: #f2f2f2 2px solid
         border-radius: 20px
         margin-top: 10px
-        width: 300px
-
+        // max-width: 300px
+        width: 100%
     &__btn
         margin-top: 30px
     &__terms
@@ -95,7 +95,15 @@
 
 @media screen and ( max-width: 767px )
     .modal
+        &__title
+            font-size: 20px
+        &__subtitle
+            text-align: left
+            font-size: 18px
+        &__window
+            padding: 20px
         &__choose
+            margin-top: 20px
             flex-direction: column
             &-item
                 &_roof
