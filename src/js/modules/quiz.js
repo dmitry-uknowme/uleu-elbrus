@@ -20,8 +20,8 @@ export default () => {
 	for (const answer of quizAnswers) {
 		answer.addEventListener('click', (e) => {
 			if (quizSlider.realIndex + 1 !== 3 || quizSlider.realIndex + 1 !== 7) {
-				const quizQuestion = closest(e.target, '.quiz__question').textContent.trim();
-				const quizValue = closest(e.target, '.quiz__answer-title').textContent.trim();
+				const quizQuestion = closest(e.target, '.quiz__question').textContent.replace(/ +/g, ' ').trim();
+				const quizValue = closest(e.target, '.quiz__answer-title').textContent.replace(/ +/g, ' ').trim();
 				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
 			}
 			quizSlider.slideNext();
@@ -30,7 +30,7 @@ export default () => {
 	quizSlider.on('slideChange', () => {
 		if (quizSlider.realIndex + 1 === 3) {
 			nextBtn.addEventListener('click', (e) => {
-				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').textContent.trim();
+				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').textContent.replace(/ +/g, ' ').trim();
 				const quizValue = parseInt(inputSizeTrack.value);
 				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
 			});
@@ -48,9 +48,9 @@ export default () => {
 				});
 			}
 			modalBtn.addEventListener('click', (e) => {
-				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
-				choosedAnswers.unshift({ present });
-				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
+				const present = document.querySelector('.modal__choose-item > h4._active').textContent.replace(/\n|\r/g, '');
+
+				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value, present });
 				console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
 				generateMessage(choosedAnswers);
 
