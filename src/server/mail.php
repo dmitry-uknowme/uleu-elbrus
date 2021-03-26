@@ -2,13 +2,13 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-if (empty($_POST)) {
+$request = json_decode(file_get_contents("php://input"), true);
+
+if (empty($request)) {
     http_response_code(400);
     echo json_encode(['message' => 'Данные не отправлены', 'result' => ''], JSON_UNESCAPED_UNICODE);
     return;
 }
-
-$request = json_decode(file_get_contents("php://input"), true);
 
 $name = htmlspecialchars_decode($request['name']);
 $phone = htmlspecialchars_decode($request['phone']);
