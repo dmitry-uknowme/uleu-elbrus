@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { quizSlider } from './sliders';
 
 export default () => {
@@ -11,7 +12,7 @@ export default () => {
 	const modalName = document.querySelector('.modal__input-name');
 	const modalPhone = document.querySelector('.modal__input-phone');
 	const modalChoose = document.querySelector('.modal__choose');
-	const choosedAnswers = [];
+	const choosedAnswers = { name: null, phone: null, answers: [] };
 
 	const closest = (el, sel) => {
 		if (el != null) return el.matches(sel) ? el : el.querySelector(sel) || closest(el.parentNode, sel);
@@ -21,8 +22,10 @@ export default () => {
 		answer.addEventListener('click', (e) => {
 			if (quizSlider.realIndex + 1 !== 3 || quizSlider.realIndex + 1 !== 7) {
 				const quizQuestion = closest(e.target, '.quiz__question').getAttribute('data-real-question');
-				const quizValue = closest(e.target, '.quiz__answer-title').textContent;
-				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
+				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
+				const quizValue = closest(e.target, '.quiz__answer-title').textContent.replace(/\n\t/gm, '');
+				// choosedAnswers.push({ question: quizQuestion, answer: quizValue })
+				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
 			}
 			quizSlider.slideNext();
 		});
@@ -31,8 +34,10 @@ export default () => {
 		if (quizSlider.realIndex + 1 === 3) {
 			nextBtn.addEventListener('click', (e) => {
 				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').getAttribute('data-real-question');
+				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
 				const quizValue = parseInt(inputSizeTrack.value);
-				choosedAnswers.push({ question: quizQuestion, answer: quizValue });
+				// choosedAnswers.push({ question: quizQuestion, answer: quizValue });
+				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
 			});
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
@@ -49,21 +54,33 @@ export default () => {
 			}
 			modalBtn.addEventListener('click', (e) => {
 				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
+				// choosedAnswers.push({ question: 'Вы выбрали подарок:', answer: present });
+				choosedAnswers.answers.push({ question: 'Вы выбрали подарок:', answer: present });
 
-				choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value, present });
-				console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
-				generateMessage(choosedAnswers);
+				// choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
+				choosedAnswers.name = modalName.value;
+				choosedAnswers.phone = modalPhone.value;
+				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
+				console.log('Вы выбрали эти ответы во время опроса:', postData);
+				// generateMessage(choosedAnswers);
 
-				fetch('http://localhost:80/elbrus-dom/server/mail.php', {
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					method: 'POST',
-					body: JSON.stringify(choosedAnswers),
-				})
+				// 	fetch('./server/mail.php', {
+				// 		headers: {
+				// 			'Content-Type': 'application/json',
+				// 		},
+				// 		method: 'POST',
+				// 		body: JSON.stringify(choosedAnswers),
+				// 	})
+				// 		.then((response) => response.json())
+				// 		.then((json) => console.log(json))
+				// 		.catch((err) => console.error(err));
+				axios
+					.post('./server/mail.php', {
+						choosedAnswers,
+					})
 					.then((response) => response.json())
-					.then((json) => console.log(json))
-					.catch((err) => console.error(err));
+					.then((json) => json && alert(json.result))
+					.catch((err) => alert(err));
 			});
 
 			quizBox.classList.add('_modal');
@@ -128,37 +145,37 @@ export const inputSize = () => {
 	});
 };
 
-export const generateMessage = (choosedAnswers) => {
-	const [user, present, ...answers] = choosedAnswers;
+// export const generateMessage = (choosedAnswers) => {
+// 	const [user, present, ...answers] = choosedAnswers;
 
-	let message = `
-					<h1>Заявка на обратный звонок от elbrus-dom.ru</h1>
-					<hr>
-					<p>
-						<b>Имя:</b>
-						<span>${user.name}</span>
-					</p>
-					<p>
-						<b>Номер телефона:</b>
-						<span>${user.phone}</span>
-					</p>	
-			
-				`;
+// 	let message = `
+// 					<h1>Заявка на обратный звонок от elbrus-dom.ru</h1>
+// 					<hr>
+// 					<p>
+// 						<b>Имя:</b>
+// 						<span>${user.name}</span>
+// 					</p>
+// 					<p>
+// 						<b>Номер телефона:</b>
+// 						<span>${user.phone}</span>
+// 					</p>
 
-	for (const answer of answers) {
-		message += `
-						<p>
-							<b>${answer.question}</b>
-							<span>${answer.answer}</span>
-						</p>
-						
-					`;
-	}
-	message += `
-						<p>
-							<b>Вы выбрали подарок:</b>
-							<span>${present.present}</span>
-						</p>
-				`;
-	console.log(message);
-};
+// 				`;
+
+// 	for (const answer of answers) {
+// 		message += `
+// 						<p>
+// 							<b>${answer.question}</b>
+// 							<span>${answer.answer}</span>
+// 						</p>
+
+// 					`;
+// 	}
+// 	message += `
+// 						<p>
+// 							<b>Вы выбрали подарок:</b>
+// 							<span>${present.present}</span>
+// 						</p>
+// 				`;
+// 	console.log(message);
+// };
