@@ -129,6 +129,7 @@
     &__btn
         margin-top: 50px
     &__answers
+        margin-top: 20px
         &_mobile
             display: none
         // margin-top: 30px
@@ -165,6 +166,10 @@
                 text-transform: uppercase
                 font-weight: 700
                 color: #dcdcdc
+                opacity: 0
+            .quiz__answer-desc._active
+                opacity: 1
+                transition: all 0.5s
             .quiz__answer-number
                 text-transform: uppercase
                 font-weight: 700
@@ -179,6 +184,8 @@
                 display: flex
                 justify-content: space-around
                 align-items: center
+            .quiz__answer-decrement,.quiz__answer-increment
+                cursor: pointer
 
     &__stage
         &_roof-material
@@ -290,7 +297,11 @@
                 margin-right: 0
 
 @media screen and (max-width: 767px)
-
+    .quiz__box,.quiz__container
+        height: 900px !important
+    .quiz__btn
+        position: absolute
+        bottom: 10%
     .quiz__answers_mobile
         .row > div
             height: 100%

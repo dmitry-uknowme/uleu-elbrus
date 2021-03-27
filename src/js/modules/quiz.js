@@ -8,6 +8,7 @@ export default () => {
 	const quizAnswers = document.querySelectorAll('.quiz__answer');
 	const quizBox = document.querySelector('.quiz__box');
 	const quizSuccess = document.querySelector('.quiz__success');
+	const quizColumn = document.querySelector('.quiz__column');
 	const inputSizeTrack = document.querySelector('.quiz__input-size input');
 	const modalName = document.querySelector('.modal__input-name');
 	const modalPhone = document.querySelector('.modal__input-phone');
@@ -41,6 +42,10 @@ export default () => {
 			});
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
+			console.log(quizColumn);
+			// quizColumn.classList.add('container-fluid');
+			// quizColumn.classList.add('p-0');
+			quizColumn.style.maxWidth = '100%';
 			for (const present of modalChoose.children) {
 				console.log(present);
 				present.addEventListener('click', (e) => {
@@ -98,6 +103,7 @@ export const inputSize = () => {
 	const inputSizeContainer = document.querySelector('.quiz__input-size');
 	const inputSizeLine = document.querySelector('.quiz__input-size-line');
 	const inputSizeTrack = document.querySelector('.quiz__input-size input');
+	const inputSizeDesc = document.querySelector('.quiz__answer-desc');
 	const numberSize = document.querySelector('.quiz__answer-number span');
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
@@ -111,12 +117,13 @@ export const inputSize = () => {
 	const sizeFill = setInterval(() => {
 		if (inputSizeTrack.value >= 50) {
 			clearInterval(sizeFill);
+			inputSizeDesc.classList.add('_active');
 			return false;
 		}
 		inputSizeTrack.value++;
 		numberSize.innerHTML = inputSizeTrack.value;
 		inputSizeLine.style.width = `${(inputSizeTrack.value * maxWidth) / maxValue}px`;
-	}, 50);
+	}, 30);
 
 	const inputSizeHandler = (e) => {
 		if (e.target.value >= 250) {
