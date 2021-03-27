@@ -78,8 +78,11 @@ export default () => {
 					.post('./server/mail.php', {
 						postData,
 					})
-					.then((response) => {console.log(response); alert("Ваша заявки принята. Ожидайте звонка")})
-					.catch((error) => alert("Ошибка отправки запроса. Попробуйте позднее"));
+					.then((response) => {
+						console.log(response);
+						alert('Ваша заявки принята. Ожидайте звонка');
+					})
+					.catch((error) => alert('Ошибка отправки запроса. Попробуйте позднее'));
 			});
 
 			quizBox.classList.add('_modal');
@@ -98,9 +101,12 @@ export const inputSize = () => {
 	const numberSize = document.querySelector('.quiz__answer-number span');
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
-
-	const maxWidth = 300;
+	console.log(inputSizeTrack.offsetWidth);
+	const maxWidth = inputSizeTrack.offsetWidth;
 	const maxValue = 500;
+
+	const isMobile = maxWidth <= 200;
+	console.log('mobile', isMobile);
 
 	const sizeFill = setInterval(() => {
 		if (inputSizeTrack.value >= 50) {
@@ -113,15 +119,32 @@ export const inputSize = () => {
 	}, 50);
 
 	const inputSizeHandler = (e) => {
-		if (e.target.value >= 271) {
-			inputSizeTrack.style.marginLeft = '13%';
-		} else if (e.target.value < 271) {
-			inputSizeTrack.style.marginLeft = '11%';
-		} else if (e.target.value >= 30) {
-			inputSizeTrack.style.marginLeft = '11%';
-		} else if (e.target.value < 30) {
-			inputSizeTrack.style.marginLeft = '12%';
+		if (e.target.value >= 250) {
+			inputSizeTrack.style.marginLeft = '45px';
+		} else if (e.target.value < 250) {
+			inputSizeTrack.style.marginLeft = '43px';
 		}
+		if (e.target.value >= 400) {
+			inputSizeTrack.style.marginLeft = '48px';
+		} else if (e.target.value < 400) {
+			inputSizeTrack.style.marginLeft = '43px';
+		}
+		if (e.target.value >= 470) {
+			console.log('>470');
+			inputSizeTrack.style.marginLeft = '50px';
+		} else if (e.target.value < 470) {
+			inputSizeTrack.style.marginLeft = '43px';
+		}
+
+		// if (e.target.value >= 271) {
+		// 	inputSizeTrack.style.marginLeft = '13%';
+		// } else if (e.target.value < 271) {
+		// 	inputSizeTrack.style.marginLeft = '11%';
+		// } else if (e.target.value >= 30) {
+		// 	inputSizeTrack.style.marginLeft = '11%';
+		// } else if (e.target.value < 30) {
+		// 	inputSizeTrack.style.marginLeft = '12%';
+		// }
 
 		numberSize.innerHTML = e.target.value;
 		inputSizeLine.style.width = `${(e.target.value * maxWidth) / maxValue}px`;

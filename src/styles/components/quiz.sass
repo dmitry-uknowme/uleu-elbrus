@@ -3,7 +3,8 @@
     &__input-size
         height: 80px
         margin: auto
-        max-width: 502px
+        // max-width: 502px
+        max-width: 430px
         margin-top: 40px
         position: relative
         &-base
@@ -11,78 +12,54 @@
             content: ''
             position: absolute
             top: -78%
-            left: 2%
-            width: 13%
+            left: 0
+            width: 70px
             height: 72px
             background: url('../assets/images/quiz/quiz__track-base.png')
             background-repeat: no-repeat
         &-line
+            position: absolute
+            bottom: 79%
             height: 20px
-            margin-left: 13%
+            // margin-left: 13%
+            margin-left: 50px
             margin-top: 16%
-            // // background-position-x: -448px
-            // content: ''
-            // position: absolute
-            // top: 75%
-            // left: 13%
-            // max-width: 89%
-            // z-index: -1
-            // height: 72px
+            // max-width: 87%
+            max-width: 360px
             background: url('../assets/images/quiz/quiz__track-line.png') no-repeat
-            // background-repeat: no-repeat
-        input
+            z-index: -1
+        &-track
+            background: transparent
             display: block
-            margin-top: -3%
+            margin-top: 1%
             cursor: grab
-            width: 300px
-            margin-left: 11%
+            width: 360px
+            // max-width: 87%
+            margin-left: 43px
             appearance: none
-            // margin-left: -5px
-
-            // position: absolute
-            // bottom: 5%
-            // outline: none !important
-            // background: none
-            // left: 13%
-            // width: 87%
-            // transform: scaleX(1.07)
+            position: relative
+            z-index: 1
             &:focus
                 outline: none !important
                 // border: none
                 // background: none
             &::-webkit-slider-thumb
-                // transform: translateX(-50%)
                 appearance: none
-                // outline: none !important
-                // box-shadow: 0px 0px 0px #000
-                // // border: 1px solid #2497E3
                 height: 9px
                 width: 10px
-                // // border-radius: 25px
-                // // background: #A1D0FF
                 background: url('../assets/images/quiz/quiz__track.png')
-                // cursor: pointer
-                // -webkit-appearance: none
-                // margin-top: 10px
         &::before
             content: ''
             position: absolute
             top: -39%
-            left: 5%
+            left: 50px
+            // left: 5%
             background: url('../assets/images/quiz/quiz__track-bg.png') no-repeat
-            width: 100%
+            // width: 93%
+            width: 360px
             height: 40px
             z-index: -1
-        // &::after
-        //     pointer-events: none
-        //     content: ''
-        //     position: absolute
-        //     top: -135%
-        //     left: 0
-        //     width: 100%
-        //     height: 50px
-        //     background: url('../assets/images/quiz/quiz__answer3.png')
-        //     background-repeat: no-repeat
+
     &__success
         color: #e6b315
         font-size: 34px
@@ -115,22 +92,8 @@
             background: url('../assets/images/quiz/quiz__success-light-right.png')
     .modal__window
         max-width: 468px
-        //width: 60%
-        //margin-top: 200px
     &__stage
         overflow: hidden
-
-        // transform: scale(0)
-        // display: none
-        // height: 0
-        // width: 0
-    &__stage._active
-        // transition: all 0.5s
-        // display: block
-        // transform: scale(1)
-        // height: auto
-        // width: auto
-        // display: block
     .img-center
         pointer-events: none
         display: block
@@ -339,7 +302,6 @@
                 line-height: 1.3
                 display: block
 
-
         &__items
             justify-content: center !important
             flex-wrap: wrap
@@ -356,6 +318,17 @@
 
     .quiz
         margin-top: 80px
+        &__input-size
+            &::before
+                left: 40px
+                width: 210px
+            &-base
+                top: -70%
+                transform: scale(0.8)
+            &-line
+                max-width: 200px
+            &-track
+                width: 200px
         &__success
             font-size: 25px
         &__box
@@ -374,6 +347,8 @@
             height: 148px
             &-img
                 transform: scale(0.9)
+            &-number
+                font-size: 28px !important
         &__answer-title
             font-size: 12px
 
@@ -402,11 +377,11 @@
     .quiz__stage_roof-material .quiz__answer-title
         font-size: 10px
 
-    .quiz__input
-        &-size
-            transform: scale(0.7,0.9)
-            &-base
-                width: 16%
+    // .quiz__input
+    //     &-size
+    //         transform: scale(0.7,0.9)
+    //         &-base
+    //             width: 16%
 
     .quiz
         &__stage
