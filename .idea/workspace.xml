@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/modules/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/modal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/modal.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616795397397</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update client-server">
+      <created>1616853896606</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616853896606</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +166,7 @@
     <MESSAGE value="add adaptive for house step 1: 434x - min" />
     <MESSAGE value="some fix" />
     <MESSAGE value="add server" />
-    <option name="LAST_COMMIT_MESSAGE" value="add server" />
+    <MESSAGE value="update client-server" />
+    <option name="LAST_COMMIT_MESSAGE" value="update client-server" />
   </component>
 </project>

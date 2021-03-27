@@ -55,7 +55,7 @@
             h4._active
                 background: linear-gradient(to bottom, #f0bf2c, #efd23f)
                 color: white
-                transform: scale(1.1)
+                //transform: scale(1.1)
             &-icon
                 pointer-events: none
             &_roof
@@ -83,6 +83,22 @@
                 &::before,&::after
                     display: none
 
+                h4
+                    position: relative
+                    background: #ffffff
+
+                    &:after
+                        content: ' '
+                        pointer-events: none
+                        z-index: -1
+                        position: absolute
+                        height: 153px
+                        width: 206px
+                        right: -191px
+                        top: -100px
+                        background: url('../assets/images/modal/modal__present-mobile.png') no-repeat
+                        background-size: 100% 100%
+
             h4
                 font-size: 12px
                 font-weight: 500
@@ -107,6 +123,10 @@
         text-align: center
         font-size: 10px
         font-weight: 500
+
+@media screen and ( min-width: 768px )
+    .modal__choose-item_water h4:after
+        display: none
 
 @media screen and ( max-width: 767px )
     .modal
