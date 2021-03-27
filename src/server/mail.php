@@ -6,9 +6,11 @@ $request = json_decode(file_get_contents("php://input"), true);
 
 if (empty($request)) {
     http_response_code(400);
-    echo json_encode(['message' => 'Данные не отправлены', 'result' => ''], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['message' => 'Данные не отправлены', 'result' => $request], JSON_UNESCAPED_UNICODE);
     return;
 }
+
+$request = $request['postData'];
 
 $name = htmlspecialchars_decode($request['name']);
 $phone = htmlspecialchars_decode($request['phone']);
@@ -40,7 +42,7 @@ if (empty($answers)) {
 
 if (count($errors) > 0) {
     http_response_code(400);
-    echo json_encode(['message' => 'Нет нужной информации', 'result' => $errors], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['message' => 'Нет нужной информации', 'result' => [$errors, $request]], JSON_UNESCAPED_UNICODE);
     return;
 }
 
@@ -79,7 +81,7 @@ $mail_result = mail(
 
 if (!$mail_result) {
     http_response_code(500);
-    echo json_encode(['message' => 'Неизвестная ошибка сервера', 'result' => ''], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['message' => 'Неизвестная ошибка сервера', 'result' => $request], JSON_UNESCAPED_UNICODE);
     return;
 }
 
