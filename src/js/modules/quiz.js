@@ -60,7 +60,7 @@ export default () => {
 				// choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
 				choosedAnswers.name = modalName.value;
 				choosedAnswers.phone = modalPhone.value;
-				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
+				const postData = JSON.stringify(choosedAnswers);
 				console.log('Вы выбрали эти ответы во время опроса:', postData);
 				// generateMessage(choosedAnswers);
 
@@ -76,11 +76,10 @@ export default () => {
 				// 		.catch((err) => console.error(err));
 				axios
 					.post('./server/mail.php', {
-						choosedAnswers,
+						postData,
 					})
-					.then((response) => response.json())
-					.then((json) => json && alert(json.result))
-					.catch((err) => alert(err));
+					.then((response) => {console.log(response); alert("Ваша заявки принята. Ожидайте звонка")})
+					.catch((error) => alert("Ошибка отправки запроса. Попробуйте позднее"));
 			});
 
 			quizBox.classList.add('_modal');
