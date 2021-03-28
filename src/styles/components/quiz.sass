@@ -224,7 +224,7 @@
                 position: relative
                 width: 100%
 
-.quiz-header
+.intro
     max-width: 1600px
     margin: auto
     &__title
@@ -272,51 +272,7 @@
         width: 350px
         font-size: 18px
 
-@media screen and ( max-width: 1350px )
-    .quiz-header
-        &__item-title
-            font-size: 13px
-        &__title
-            font-size: 37px
-
-@media screen and (max-width: 991px)
-    .quiz-header
-        &__title
-            font-size: 25px
-        &__subtitle
-            font-size: 20px
-            &::before
-                display: none
-        &__items
-            // justify-content: center !important
-        &__item
-            margin: 0 1rem
-            &:first-child
-                margin-left: 0
-            &:last-child
-                margin-right: 0
-
 @media screen and (max-width: 767px)
-    .quiz-header__item
-        backdrop-filter: blur(5px)
-        background: rgba(255, 255, 255, 0.1)
-        border: 2px solid #efefef
-        width: 100%
-        padding: 20px
-        position: relative
-        backdrop-filter: blur(21px)
-        border-radius: 10px
-        background: rgba(255,255,255,0.4)
-    .quiz-header__item-img
-        position: absolute
-        right: 5%
-        top: 50%
-        transform: translateY(-50%) scale(0.8)
-    .quiz-header__item-title
-        text-align: left
-    .quiz-header__item-desc
-        text-align: left
-
     .quiz__box,.quiz__container
         height: 900px !important
     .quiz__btn
@@ -325,27 +281,6 @@
     .quiz__answers_mobile
         .row > div
             height: 100%
-
-    .quiz-header
-        &__title
-            display: none
-            &_mobile
-                line-height: 1.3
-                display: block
-
-        &__items
-            justify-content: center !important
-            flex-wrap: wrap
-            text-align: center
-        &__item
-            margin: 0 1rem 1rem
-
-            &:first-child
-                margin-left: 1.5rem
-                margin-right: 1.5rem
-            &:last-child
-                margin-left: 1.5rem
-                margin-right: 1.5rem
 
     .quiz
         margin-top: 80px
@@ -414,6 +349,6 @@
                 .quiz__answer
                     transform: scale(0.75)
 
-    .quiz-header
+    .intro
         &__title
             margin-top: 20px
