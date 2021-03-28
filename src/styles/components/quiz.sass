@@ -297,6 +297,26 @@
                 margin-right: 0
 
 @media screen and (max-width: 767px)
+    .quiz-header__item
+        backdrop-filter: blur(5px)
+        background: rgba(255, 255, 255, 0.1)
+        border: 2px solid #efefef
+        width: 100%
+        padding: 20px
+        position: relative
+        backdrop-filter: blur(21px)
+        border-radius: 10px
+        background: rgba(255,255,255,0.4)
+    .quiz-header__item-img
+        position: absolute
+        right: 5%
+        top: 50%
+        transform: translateY(-50%) scale(0.8)
+    .quiz-header__item-title
+        text-align: left
+    .quiz-header__item-desc
+        text-align: left
+
     .quiz__box,.quiz__container
         height: 900px !important
     .quiz__btn
@@ -387,12 +407,6 @@
 @media screen and ( max-width: 576px )
     .quiz__stage_roof-material .quiz__answer-title
         font-size: 10px
-
-    // .quiz__input
-    //     &-size
-    //         transform: scale(0.7,0.9)
-    //         &-base
-    //             width: 16%
 
     .quiz
         &__stage
