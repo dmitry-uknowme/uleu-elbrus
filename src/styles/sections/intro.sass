@@ -1,11 +1,5 @@
-.header-intro-bg
-    padding-bottom: 100px
-    background: url('../assets/images/header-intro-bg.png')
-    background-repeat: no-repeat
-    background-position: center top
-    background-size: cover
-
 .intro__bg-left
+    position: relative
     &::before
         content: ''
         position: absolute
@@ -22,13 +16,16 @@
     position: relative
     padding-top: 60px
     &::before
-        content: ''
-        position: absolute
-        top: 38%
-        left: 0
-        background: url('../assets/images/intro/intro__decor-left.png') no-repeat
-        width: 222px
-        height: 437px
+        // content: ''
+        // position: absolute
+        // top: 38%
+        // left: 0
+        // background: url('../assets/images/intro/intro__decor-left.png') no-repeat
+        // width: 222px
+        // height: 437px
+    &__subtitle
+        &_mobile
+            display: none
     &__house
         z-index: 2
         position: absolute
@@ -170,6 +167,9 @@
         &__btn
             &::before
                 display: none
+        &__bg-left
+            &::before
+                display: none
 
 @media screen and (max-width: 1350px)
     .intro
@@ -267,6 +267,9 @@
             &_mobile
                 line-height: 1.3
                 display: block
+        &__subtitle
+            margin-top: 40px
+
         &__items
             justify-content: center !important
             flex-wrap: wrap

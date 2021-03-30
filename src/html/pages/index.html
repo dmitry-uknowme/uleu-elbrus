@@ -14,7 +14,9 @@
 		<title>ЭльбрусДом</title>
 	</head>
 	<body>
-		<div class="header-intro-bg"><%= _.template(require('../includes/header.html'))() %> <%= _.template(require('../includes/intro.html'))() %></div>
-		<%=_.template(require('../includes/quiz.html'))() %> <%= _.template(require('../includes/footer.html'))() %>
+		<div class="full-bg">
+			<%= _.template(require('../includes/header.html'))() %> <%= _.template(require('../includes/intro.html'))() %><%=_.template(require('../includes/quiz.html'))() %> <%=
+			_.template(require('../includes/footer.html'))() %>
+		</div>
 	</body>
 </html>
