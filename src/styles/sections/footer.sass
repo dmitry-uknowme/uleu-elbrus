@@ -33,9 +33,7 @@
     &__call
         &_mobile
             display: none
-    &__border
-        transform: rotate(90deg)
-        display: none
+
     &__decor-left
         position: absolute
         top: -392%
@@ -77,6 +75,8 @@
         padding-bottom: 50px
         height: auto
         background: transparent
+        &__tagline
+            margin-top: 15px
         &::before
             display: block
             background: url(../assets/images/footer/footer__decor-left-mobile.png) no-repeat
@@ -91,6 +91,10 @@
             height: 438px
             top: -43%
             right: -39%
+
+        &__border
+            transform: rotate(90deg)
+            // display: none
         &__menu
             flex-direction: column
         &__info
