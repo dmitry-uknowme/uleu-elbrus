@@ -7,7 +7,7 @@ export const quizSlider = new Swiper('.quiz__container', {
 	direction: 'horizontal',
 	wrapperClass: 'quiz__wrapper',
 	slideClass: 'quiz__stage',
-	allowTouchMove: false,
+	// allowTouchMove: false,
 	navigation: {
 		nextEl: '.quiz__btn',
 		prevEl: '.swiper-button-prev',
@@ -16,6 +16,6 @@ export const quizSlider = new Swiper('.quiz__container', {
 	observeSlideChildren: true,
 	observer: true,
 	resizeObserver: true,
-	autoHeight: true,
+	// autoHeight: true,
 	roundLengths: true,
 });
