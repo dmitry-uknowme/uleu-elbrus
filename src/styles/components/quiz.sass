@@ -1,5 +1,9 @@
 .quiz
     margin-top: -150px
+    &__btn
+        position: absolute !important
+        bottom: 5% !important
+        z-index: 50
     &__input-size
         height: 80px
         margin: auto
@@ -104,7 +108,10 @@
         text-align: center
         text-transform: uppercase
         font-weight: 700
+    &__container
+        height: 100%
     &__box
+        height: 500px
         margin-top: 40px
         border-radius: 20px
         padding-top: 20px
@@ -115,19 +122,15 @@
         box-shadow: 0 21px 21px 6px rgba(0, 0, 0, 0.13)
 
     &__box._modal
-        background: none
         box-shadow: none
         background: none
         border: none
-        height: auto
+        height: auto !important
     &__question
         margin: 0
         text-align: center
         text-transform: uppercase
         font-weight: 700
-
-    &__btn
-        margin-top: 50px
     &__answers
         margin-top: 20px
         &_mobile
@@ -272,15 +275,37 @@
         width: 350px
         font-size: 18px
 
+@media screen and ( max-width: 991px )
+    .quiz
+        &__btn
+            bottom: 0 !important
+        &__box
+            height: 870px
+        &__stage
+            &_house-material
+                .quiz__answer
+                    height: 200px
+                    transform: scale(0.8)
+
 @media screen and (max-width: 767px)
-    .quiz__box,.quiz__container
-        height: 900px !important
-    .quiz__btn
-        position: absolute
-        bottom: 10%
-    .quiz__answers_mobile
+    .quiz
+        &__box
+            height: 700px !important
+        &__btn
+            position: absolute
+            bottom: 10%
+        &__answers_mobile
         .row > div
             height: 100%
+        &__stage
+            &_house-material
+                .quiz__answer
+                    margin-top: -38px
+            &_deadline
+                .quiz__answer
+                    margin-top: 22px
+                    &-title
+                        font-size: 17px
 
     .quiz
         margin-top: -280px
@@ -337,7 +362,7 @@
             &_deadline
                 .quiz__answer
                     &-title
-                        font-size: 20px
+                        font-size: 17px
 
 @media screen and ( max-width: 576px )
     .quiz__stage_roof-material .quiz__answer-title
