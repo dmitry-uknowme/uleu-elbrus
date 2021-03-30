@@ -143,18 +143,8 @@ export const inputSize = () => {
 			inputSizeTrack.style.marginLeft = '43px';
 		}
 
-		// if (e.target.value >= 271) {
-		// 	inputSizeTrack.style.marginLeft = '13%';
-		// } else if (e.target.value < 271) {
-		// 	inputSizeTrack.style.marginLeft = '11%';
-		// } else if (e.target.value >= 30) {
-		// 	inputSizeTrack.style.marginLeft = '11%';
-		// } else if (e.target.value < 30) {
-		// 	inputSizeTrack.style.marginLeft = '12%';
-		// }
-
-		numberSize.innerHTML = e.target.value;
-		inputSizeLine.style.width = `${(e.target.value * maxWidth) / maxValue}px`;
+		numberSize.innerHTML = inputSizeTrack.value;
+		inputSizeLine.style.width = `${(inputSizeTrack.value * maxWidth) / maxValue}px`;
 	};
 
 	inputSizeTrack.addEventListener('change', (e) => {
@@ -162,15 +152,13 @@ export const inputSize = () => {
 	});
 
 	inputSizeTrack.addEventListener('input', inputSizeHandler);
-	incrementSize.addEventListener('click', () => {
+	incrementSize.addEventListener('click', (e) => {
 		inputSizeTrack.value++;
-		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
-		numberSize.innerHTML = inputSizeTrack.value;
+		inputSizeHandler(e);
 	});
-	decrementSize.addEventListener('click', () => {
+	decrementSize.addEventListener('click', (e) => {
 		inputSizeTrack.value--;
-		inputSizeLine.style.width = `${inputSizeTrack.value - 60}px`;
-		numberSize.innerHTML = inputSizeTrack.value;
+		inputSizeHandler(e);
 	});
 };
 
