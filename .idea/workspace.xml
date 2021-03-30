@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/modal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/modal.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/menu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/footer.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dima" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -75,6 +82,9 @@
       <workItem from="1616217054631" duration="1477000" />
       <workItem from="1616232559990" duration="477000" />
       <workItem from="1616263531641" duration="6954000" />
+      <workItem from="1616953917819" duration="3081000" />
+      <workItem from="1617038270669" duration="621000" />
+      <workItem from="1617114137876" duration="4322000" />
     </task>
     <task id="LOCAL-00002" summary="add header mobile responsive">
       <created>1616139479696</created>
