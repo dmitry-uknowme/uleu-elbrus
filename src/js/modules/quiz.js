@@ -21,30 +21,39 @@ export default () => {
 
 	for (const answer of quizAnswers) {
 		answer.addEventListener('click', (e) => {
-			if (quizSlider.realIndex + 1 !== 3 || quizSlider.realIndex + 1 !== 7) {
+			const slideId = quizSlider.realIndex;
+			const slideParent = quizSlider.slides[quizSlider.realIndex];
+			const slideParentStage = slideParent.classList[1];
+			if (quizSlider.realIndex + 1 !== 7) {
 				const quizQuestion = closest(e.target, '.quiz__question').getAttribute('data-real-question');
 				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
-				const quizValue = closest(e.target, '.quiz__answer-title').textContent.replace(/\n\t/gm, '');
-				// choosedAnswers.push({ question: quizQuestion, answer: quizValue })
+				const quizTitle = closest(e.target, '.quiz__answer-title');
+				const quizValue = quizTitle.textContent.replace(/\n\t/gm, '');
+				nextBtn.disabled = false;
+				nextBtn.classList.add('_active');
+				const activeQuizTitle = document.querySelector(`.${slideParentStage} .quiz__answer-title._active`);
+				if (activeQuizTitle) {
+					activeQuizTitle.classList.remove('_active');
+				}
+				quizTitle.classList.add('_active');
+
 				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
 			}
-			quizSlider.slideNext();
+			// quizSlider.slideNext();
 		});
 	}
 	quizSlider.on('slideChange', () => {
+		nextBtn.disabled = true;
 		if (quizSlider.realIndex + 1 === 3) {
-			nextBtn.addEventListener('click', (e) => {
-				const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').getAttribute('data-real-question');
-				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
-				const quizValue = parseInt(inputSizeTrack.value);
-				// choosedAnswers.push({ question: quizQuestion, answer: quizValue });
-				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
-			});
+			// nextBtn.addEventListener('click', (e) => {
+			// 	const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').getAttribute('data-real-question');
+			// 	const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
+			// 	const quizValue = parseInt(inputSizeTrack.value);
+			// 	// choosedAnswers.push({ question: quizQuestion, answer: quizValue });
+			// 	choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
+			// });
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
-			console.log(quizColumn);
-			// quizColumn.classList.add('container-fluid');
-			// quizColumn.classList.add('p-0');
 			quizColumn.style.maxWidth = '100%';
 			for (const present of modalChoose.children) {
 				console.log(present);
@@ -126,32 +135,33 @@ export const inputSize = () => {
 	}, 30);
 
 	const inputSizeHandler = (e) => {
-		if (e.target.value >= 250) {
-			inputSizeTrack.style.marginLeft = '45px';
+		const track = inputSizeTrack;
+		// track.classList.add('_active');
+		if (track.value >= 250) {
+			track.style.marginLeft = '45px';
 		} else if (e.target.value < 250) {
-			inputSizeTrack.style.marginLeft = '43px';
+			track.style.marginLeft = '43px';
 		}
-		if (e.target.value >= 400) {
-			inputSizeTrack.style.marginLeft = '48px';
+		if (track.value >= 400) {
+			track.style.marginLeft = '48px';
 		} else if (e.target.value < 400) {
-			inputSizeTrack.style.marginLeft = '43px';
+			track.style.marginLeft = '43px';
 		}
-		if (e.target.value >= 470) {
+		if (track.value >= 470) {
 			console.log('>470');
-			inputSizeTrack.style.marginLeft = '50px';
-		} else if (e.target.value < 470) {
-			inputSizeTrack.style.marginLeft = '43px';
+			track.style.marginLeft = '50px';
+		} else if (track.value < 470) {
+			track.style.marginLeft = '43px';
 		}
 
 		numberSize.innerHTML = inputSizeTrack.value;
 		inputSizeLine.style.width = `${(inputSizeTrack.value * maxWidth) / maxValue}px`;
 	};
 
-	inputSizeTrack.addEventListener('change', (e) => {
-		numberSize.innerHTML = e.target.value;
-	});
+	inputSizeTrack.addEventListener('change', inputSizeHandler);
 
 	inputSizeTrack.addEventListener('input', inputSizeHandler);
+
 	incrementSize.addEventListener('click', (e) => {
 		inputSizeTrack.value++;
 		inputSizeHandler(e);

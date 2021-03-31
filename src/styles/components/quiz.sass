@@ -1,9 +1,16 @@
 .quiz
     margin-top: -150px
-    &__btn
+    &__btn._next
         position: absolute !important
         bottom: 5% !important
         z-index: 50
+        color: rgba(0,0,0,0.2)
+        &::after
+            opacity: 0
+    &__btn._active._next
+        color: #000
+        &::after
+            opacity: 1
     &__input-size
         height: 80px
         margin: auto
@@ -35,11 +42,12 @@
         &-track
             background: transparent
             display: block
-            margin-top: 1%
-            cursor: grab
+            margin-left: 43px
+            height: 150px !important
+            margin-top: -17% !important
+            cursor: grab !important
             width: 360px
             // max-width: 87%
-            margin-left: 43px
             appearance: none
             position: relative
             z-index: 1
@@ -155,6 +163,10 @@
             font-weight: 700
             text-transform: uppercase
             white-space: nowrap
+
+        &-title._active
+            background: linear-gradient(to bottom, #f0bf2c, #efd23f)
+            color: white
 
     &__stage
         &_house-material
