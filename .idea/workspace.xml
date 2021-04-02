@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/includes/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/intro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/menu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/footer.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dima" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,6 +80,8 @@
       <workItem from="1616953917819" duration="3081000" />
       <workItem from="1617038270669" duration="621000" />
       <workItem from="1617114137876" duration="4322000" />
+      <workItem from="1617227121622" duration="57000" />
+      <workItem from="1617342564107" duration="3517000" />
     </task>
     <task id="LOCAL-00002" summary="add header mobile responsive">
       <created>1616139479696</created>
