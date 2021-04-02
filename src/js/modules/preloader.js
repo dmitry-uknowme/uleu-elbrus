@@ -25,11 +25,13 @@ export const runPreloader = (timeDelay, text) => {
 	const preloaderStyles = document.querySelector('style');
 	const preloaderIcon = document.querySelector('.preloader__image');
 	delay(100, () => preloader.classList.remove('_hide'));
-	delay(timeDelay - 500, () => {
-		preloaderIcon.classList.remove('_bounce');
-		preloaderIcon.classList.add('_neon');
-	});
-	delay(timeDelay, () => {
-		preloader.classList.add('_hide');
-	});
+	if (timeDelay !== 0) {
+		delay(timeDelay - 500, () => {
+			preloaderIcon.classList.remove('_bounce');
+			preloaderIcon.classList.add('_neon');
+		});
+		delay(timeDelay, () => {
+			preloader.classList.add('_hide');
+		});
+	}
 };

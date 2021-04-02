@@ -81,3 +81,16 @@
 
 ::-webkit-scrollbar
     display: none
+
+@media screen and ( max-width: 767px )
+    .preloader
+        &__image
+            width: 150px
+            height: 150px
+        &__text
+            font-size: 14px
+
+@media screen and ( max-width: 576px )
+    .preloader
+        &__text
+            font-size: 11px

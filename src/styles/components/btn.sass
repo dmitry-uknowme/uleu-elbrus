@@ -72,14 +72,14 @@
 
 @-webkit-keyframes slideme
     0%
-        left: -30px
-        margin-left: 0px
+    left: -30px
+    margin-left: 0px
     30%
-        left: 110%
-        margin-left: 80px
+    left: 110%
+    margin-left: 80px
     100%
-        left: 110%
-        margin-left: 80px
+    left: 110%
+    margin-left: 80px
 
 .btn._next
     // color: #000
@@ -96,15 +96,25 @@
         background: url('../assets/images/btn/btn__next.png')
 
 .btn._file
-    padding-left: 65px
+    padding-left: 52px
     text-transform: none
     color: #a17e15
-    // box-shadow: 0px 27px 14px 23px rgba(161, 126, 21, 0.2)
+    // box-shadow: 0px 27px 14  px 23px rgba(161, 126, 21, 0.2)
+    &::before
+        content: ''
+        position: absolute
+        top: 16%
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 30px
+        background: #a17e15
+        z-index: -1
     &::after
         content: ''
         position: absolute
-        top: 65%
-        left: -2%
+        top: 72%
+        left: -3%
         transform: translateY(-50%)
         width: 56px
         height: 70px
