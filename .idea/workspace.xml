@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616853896606</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add adaptive intro items">
+      <created>1617355604632</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1617355604632</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +179,7 @@
     <MESSAGE value="some fix" />
     <MESSAGE value="add server" />
     <MESSAGE value="update client-server" />
-    <option name="LAST_COMMIT_MESSAGE" value="update client-server" />
+    <MESSAGE value="add adaptive intro items" />
+    <option name="LAST_COMMIT_MESSAGE" value="add adaptive intro items" />
   </component>
 </project>
