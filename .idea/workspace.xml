@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/html/includes/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/includes/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/quiz.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/quiz.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617355604632</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="some fixs">
+      <created>1617357008878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617357008878</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,12 +180,12 @@
     <MESSAGE value="add header mobile responsive" />
     <MESSAGE value="add responsive quiz modal position" />
     <MESSAGE value="fix modal" />
-    <MESSAGE value="some fixs" />
     <MESSAGE value="add adaptive for house step 1: 434x - min" />
     <MESSAGE value="some fix" />
     <MESSAGE value="add server" />
     <MESSAGE value="update client-server" />
     <MESSAGE value="add adaptive intro items" />
-    <option name="LAST_COMMIT_MESSAGE" value="add adaptive intro items" />
+    <MESSAGE value="some fixs" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fixs" />
   </component>
 </project>
