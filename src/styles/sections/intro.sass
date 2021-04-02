@@ -127,9 +127,11 @@
         // transition: all 0.5s //почему-то окно появляется, а не должно
         transform: scale(0)
         box-shadow: 0px 0px 20px -1px #000000
-        max-width: 180px
+        //max-width: 180px
+        max-width: 236px
         position: absolute
-        left: -1056%
+        //left: -1056%
+        left: -1352%
         top: -255%
         border-radius: 20px
         background: #fff
@@ -139,7 +141,7 @@
             content: ''
             position: absolute
             top: 30%
-            right: -11%
+            right: -8%
             background: #fff
             transform: rotate(90deg)
             width: 20px
@@ -147,15 +149,18 @@
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
         &-title
             margin: 0
-            font-size: 13px
+            font-size: 17px
             font-weight: 700
         &-desc
+            font-size: 15px
             margin: 0
-            font-size: 13px
             font-weight: 500
     &__modal._active
         transform: scale(1)
         transition: all 0.5s
+
+.house__roof .house__modal:after
+    top: 27% !important
 
 @media screen and ( max-width: 1800px )
     .intro
@@ -340,7 +345,7 @@
         &__title
             line-height: 1
         &__right
-            top: 9%
+            top: 5%
             width: 140px
             height: 200px
         &__house
@@ -353,7 +358,7 @@
         .container
             //padding: 0
         &__right
-            top: 10%
+            top: 5%
             width: 110px
 
 @media screen and ( max-width: 400px )
