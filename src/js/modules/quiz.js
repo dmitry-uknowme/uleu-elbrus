@@ -49,6 +49,7 @@ export default () => {
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
 			quizColumn.style.maxWidth = '100%';
+			quizColumn.style.padding = '0';
 			for (const present of modalChoose.children) {
 				console.log(present);
 				present.addEventListener('click', (e) => {

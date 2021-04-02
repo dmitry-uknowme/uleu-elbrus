@@ -107,7 +107,7 @@
     .modal__window
         max-width: 468px
     &__stage
-        overflow: hidden
+        //overflow: hidden
     .img-center
         pointer-events: none
         display: block
@@ -165,7 +165,7 @@
             font-size: 17px
             font-weight: 700
             text-transform: uppercase
-            white-space: nowrap
+            //white-space: nowrap
 
         &-title._active
             background: linear-gradient(to bottom, #f0bf2c, #efd23f)
@@ -243,6 +243,11 @@
                 position: relative
                 width: 100%
 
+.quiz__stage_facing
+    .quiz__answer
+        margin: 0 auto
+        width: fit-content
+
 /** Интро в квизе ;_;
 .intro
     //max-width: 1600px
@@ -294,7 +299,7 @@
 
 .quiz__stage_roof-material
     .quiz__answer
-        height: 136px
+        //height: 136px
         justify-content: flex-start
         &-img
             margin-bottom: 1rem
@@ -303,27 +308,37 @@
         &__btn
             bottom: 0 !important
         &__box
-            height: 870px
+            //height: 870px
+            height: 670px
         &__stage
             &_house-material
                 .quiz__answer
                     height: 200px
-                    transform: scale(0.8)
+                    //transform: scale(0.8)
 
 @media screen and (max-width: 767px)
+    .quiz__stage_roof-material
+        & .quiz__answer
+            margin-top: 0
+            height: 90px
+        & .quiz__answer-img img
+            height: 50px
+            width: 50px
     .quiz
         &__box
-            height: 700px !important
+            height: 586px !important
+            //height: 700px !important
         &__btn
             position: absolute
             bottom: 10%
         &__answers_mobile
         .row > div
             height: 100%
+
         &__stage
             &_house-material
                 .quiz__answer
-                    margin-top: -38px
+                    //margin-top: -38px
             &_deadline
                 .quiz__answer
                     margin-top: 22px
@@ -352,6 +367,7 @@
         &__title
             font-size: 18px
         &__question
+            padding: 0 15px
             font-size: 19px
         &__answers
             &_desktop
@@ -360,9 +376,10 @@
                 display: block
 
         &__answer
-            height: 148px
+            //height: 148px
+            height: 112px
             &-img
-                transform: scale(0.9)
+                //transform: scale(0.9)
             &-number
                 font-size: 28px !important
         &__answer-title
@@ -375,7 +392,7 @@
             &_house-material
                 .quiz__answer
                     //height: 180px
-                    height: 100%
+                    //height: 100%
             &_size
                 .quiz__answer
                     &-desc
@@ -395,6 +412,9 @@
 
     .quiz
         &__stage
+            &_house-material
+                .quiz__answer
+                    height: 112px
             &_facing
                 .quiz__answer
                     transform: scale(0.75)
