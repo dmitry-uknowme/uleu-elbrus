@@ -1,6 +1,7 @@
 .quiz
     margin-top: -150px
     &__btn._next
+        //padding-right: 20px !important
         position: absolute !important
         bottom: 5% !important
         z-index: 50
@@ -157,6 +158,7 @@
                 pointer-events: none
                 width: 100%
         &-title
+            padding: 0 10px
             pointer-events: none
             text-align: center
             font-size: 17px
@@ -388,7 +390,7 @@
 
 @media screen and ( max-width: 576px )
     .quiz__stage_roof-material .quiz__answer-title
-        font-size: 10px
+        font-size: 7px
 
     .quiz
         &__stage
