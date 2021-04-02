@@ -24,6 +24,7 @@ const devConfig = {
 		contentBase: path.resolve(__dirname, '../build'),
 		port: 3000,
 		open: true,
+		host: '192.168.0.108',
 		// hot: true,
 		// before: (app, server) => {
 		// 	new HtmlHotPlugin({ hot: true }).setDevServer(server);
