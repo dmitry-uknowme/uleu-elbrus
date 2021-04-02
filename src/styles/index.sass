@@ -7,8 +7,15 @@ body
     font-family: 'Montserrat'
     color: #000
     overflow-x: hidden !important
+
 body._fixed
     overflow: hidden
+.app
+
+    opacity: 0
+.app._loaded
+    transition: all 1.5s
+    opacity: 1
 
 // *,*::after,*::before
 //     border: 1px solid red
@@ -27,12 +34,13 @@ section
     flex-grow: 1
 
 //components
+@import ./components/preloader
 @import ./components/modal
 @import ./components/menu
-@import ./components/quiz
 @import ./components/btn
 
 //sections
 @import ./sections/header
 @import ./sections/intro
+@import ./components/quiz
 @import ./sections/footer

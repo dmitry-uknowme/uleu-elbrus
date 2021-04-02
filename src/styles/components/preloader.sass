@@ -1,0 +1,76 @@
+.preloader
+    transition: all 0.3s
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    // background-image: url('../../img/body__bg1.png')
+    background-color: aliceblue
+    z-index: 1000
+    display: flex
+    justify-content: center
+    align-items: center
+    &__image
+        height: 200px
+        width: 200px
+        // background-image: url('../../img/header/header__logo.png')
+        background: url(../assets/images/menu/menu__logo.png) no-repeat
+        background-repeat: no-repeat
+        background-position: 50%
+        border-radius: 50%
+        position: relative
+    &__image._hide
+        transform: scale(0)
+    &__border
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: transparent
+        border-radius: 50%
+        border: 2px solid orangered
+        border-top-color: transparent
+.preloader._hide
+    transform: scale(0)
+
+._neon
+    // box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3
+    box-shadow: 0 0 10px 0 red inset, 0 0 20px 2px orange
+
+._bounce
+    animation: bounce 1s infinite linear
+._big-bounce
+    animation: big-bounce 0.7s infinite linear
+._rotate
+    animation: spin 1s infinite linear
+._rotate-faster
+    animation: spin 0.2s infinite 5
+
+@keyframes spin
+    to
+        transform: rotate(360deg)
+
+@keyframes bounce
+    20%, 50%, 80%, 100%
+        transform: translateY(0)
+    40%
+        transform: translateY(-15px)
+    70%
+        transform: translateY(-30px)
+    90%
+        transform: translateY(-6px)
+
+@keyframes big-bounce
+    20%
+        transform: translateY(0)
+    40%
+        transform: translateY(100%)
+    70%
+        transform: translateY(150%)
+    90%
+        transform: translateY(250%)
+
+::-webkit-scrollbar
+    display: none
