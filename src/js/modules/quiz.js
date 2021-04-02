@@ -19,23 +19,24 @@ export default () => {
 		if (el != null) return el.matches(sel) ? el : el.querySelector(sel) || closest(el.parentNode, sel);
 	};
 
+	nextBtn.disabled = true;
+
 	for (const answer of quizAnswers) {
 		answer.addEventListener('click', (e) => {
 			const slideId = quizSlider.realIndex;
-			const slideParent = quizSlider.slides[quizSlider.realIndex];
+			const slideParent = quizSlider.slides[slideId];
 			const slideParentStage = slideParent.classList[1];
 			if (quizSlider.realIndex + 1 !== 7) {
 				const quizQuestion = closest(e.target, '.quiz__question').getAttribute('data-real-question');
 				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
 				const quizTitle = closest(e.target, '.quiz__answer-title');
 				const quizValue = quizTitle.textContent.replace(/\n\t/gm, '');
-				nextBtn.disabled = false;
-				nextBtn.classList.add('_active');
 				const activeQuizTitle = document.querySelector(`.${slideParentStage} .quiz__answer-title._active`);
 				if (activeQuizTitle) {
 					activeQuizTitle.classList.remove('_active');
 				}
 				quizTitle.classList.add('_active');
+				nextBtn.disabled = false;
 
 				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
 			}
@@ -45,13 +46,6 @@ export default () => {
 	quizSlider.on('slideChange', () => {
 		nextBtn.disabled = true;
 		if (quizSlider.realIndex + 1 === 3) {
-			// nextBtn.addEventListener('click', (e) => {
-			// 	const quizQuestion = closest(document.querySelector('.quiz__stage_size'), '.quiz__question').getAttribute('data-real-question');
-			// 	const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
-			// 	const quizValue = parseInt(inputSizeTrack.value);
-			// 	// choosedAnswers.push({ question: quizQuestion, answer: quizValue });
-			// 	choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
-			// });
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
 			quizColumn.style.maxWidth = '100%';
@@ -68,26 +62,11 @@ export default () => {
 			}
 			modalBtn.addEventListener('click', (e) => {
 				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
-				// choosedAnswers.push({ question: 'Вы выбрали подарок:', answer: present });
 				choosedAnswers.answers.push({ question: 'Вы выбрали подарок:', answer: present });
-
-				// choosedAnswers.unshift({ name: modalName.value, phone: modalPhone.value });
 				choosedAnswers.name = modalName.value;
 				choosedAnswers.phone = modalPhone.value;
-				const postData = JSON.stringify(choosedAnswers);
+				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
 				console.log('Вы выбрали эти ответы во время опроса:', postData);
-				// generateMessage(choosedAnswers);
-
-				// 	fetch('./server/mail.php', {
-				// 		headers: {
-				// 			'Content-Type': 'application/json',
-				// 		},
-				// 		method: 'POST',
-				// 		body: JSON.stringify(choosedAnswers),
-				// 	})
-				// 		.then((response) => response.json())
-				// 		.then((json) => console.log(json))
-				// 		.catch((err) => console.error(err));
 				axios
 					.post('./server/mail.php', {
 						postData,
@@ -109,6 +88,7 @@ export default () => {
 };
 
 export const inputSize = () => {
+	const nextBtn = document.querySelector('.quiz__btn');
 	const inputSizeContainer = document.querySelector('.quiz__input-size');
 	const inputSizeLine = document.querySelector('.quiz__input-size-line');
 	const inputSizeTrack = document.querySelector('.quiz__input-size input');
@@ -116,12 +96,10 @@ export const inputSize = () => {
 	const numberSize = document.querySelector('.quiz__answer-number span');
 	const incrementSize = document.querySelector('.quiz__answer-increment');
 	const decrementSize = document.querySelector('.quiz__answer-decrement');
-	console.log(inputSizeTrack.offsetWidth);
 	const maxWidth = inputSizeTrack.offsetWidth;
 	const maxValue = 500;
 
 	const isMobile = maxWidth <= 200;
-	console.log('mobile', isMobile);
 
 	const sizeFill = setInterval(() => {
 		if (inputSizeTrack.value >= 50) {
@@ -135,8 +113,10 @@ export const inputSize = () => {
 	}, 30);
 
 	const inputSizeHandler = (e) => {
+		if (nextBtn.disabled) {
+			nextBtn.disabled = false;
+		}
 		const track = inputSizeTrack;
-		// track.classList.add('_active');
 		if (track.value >= 250) {
 			track.style.marginLeft = '45px';
 		} else if (e.target.value < 250) {
@@ -171,38 +151,3 @@ export const inputSize = () => {
 		inputSizeHandler(e);
 	});
 };
-
-// export const generateMessage = (choosedAnswers) => {
-// 	const [user, present, ...answers] = choosedAnswers;
-
-// 	let message = `
-// 					<h1>Заявка на обратный звонок от elbrus-dom.ru</h1>
-// 					<hr>
-// 					<p>
-// 						<b>Имя:</b>
-// 						<span>${user.name}</span>
-// 					</p>
-// 					<p>
-// 						<b>Номер телефона:</b>
-// 						<span>${user.phone}</span>
-// 					</p>
-
-// 				`;
-
-// 	for (const answer of answers) {
-// 		message += `
-// 						<p>
-// 							<b>${answer.question}</b>
-// 							<span>${answer.answer}</span>
-// 						</p>
-
-// 					`;
-// 	}
-// 	message += `
-// 						<p>
-// 							<b>Вы выбрали подарок:</b>
-// 							<span>${present.present}</span>
-// 						</p>
-// 				`;
-// 	console.log(message);
-// };
