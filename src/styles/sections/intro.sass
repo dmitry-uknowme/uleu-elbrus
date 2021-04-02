@@ -1,6 +1,8 @@
 .intro__bg-left
+    overflow-x: hidden
     position: relative
     &::before
+        display: none
         content: ''
         position: absolute
         top: 38%
@@ -26,16 +28,18 @@
     &__subtitle
         &_mobile
             display: none
-    &__house
-        z-index: 2
+    &__right
+        transform-origin: top center
         position: absolute
-        //top: 0
-        //right: -2%
+        top: -1%
+        right: 0
         width: 830px
-        height: 1175px
-        transform: scale(0.8)
-        top: -15%
-        right: -8%
+        height: 700px
+    &__house
+        background: url('../assets/images/intro/intro__house.png') no-repeat
+        background-size: cover
+        width: 100%
+        height: 100%
         &::after
             // Я вшил новое дерево в картинку дома
             //content: ''
@@ -45,12 +49,14 @@
             //background: url('../assets/images/intro/intro__decor-right.png') no-repeat
             //width: 247px
             //height: 516px
-        &-img
-            width: 100%
-            height: 100%
+        // &-img
+        //     background: url('../assets/images/intro/intro__house4.png') no-repeat
+        //     width: 830px
+        //     height: 1175px
         &-materials
+            transform-origin: top center
             position: absolute
-            top: 7%
+            top: 9.5%
             left: 46%
             width: 316px
             height: 282px
@@ -150,6 +156,11 @@
         transform: scale(1)
         transition: all 0.5s
 
+@media screen and ( max-width: 1800px )
+    .intro
+        &__right
+            width: 747px
+
 @media screen and ( max-width: 1700px )
     .intro
         &__btn
@@ -160,16 +171,26 @@
     .intro
         &::before
             display: none
-        &__house
-            transform: scale(0.80)
-            top: -15%
-            right: -8%
+        // &__house
+        //     transform: scale(0.80)
+        //     top: -15%
+        //     right: -8%
         &__btn
             &::before
                 display: none
         &__bg-left
             &::before
                 display: none
+
+@media screen and ( max-width: 1500px )
+    .intro
+        &__right
+            width: 664px
+            height: 600px
+    .house
+        &__materials
+            left: 41%
+            transform: scale(0.8)
 
 @media screen and (max-width: 1350px)
     .intro
@@ -178,17 +199,22 @@
         &__title
             font-size: 37px
 
-        &__house
-            transform: scale(0.7)
-            top: -25%
-            right: -13%
+        // &__house
+        //     transform: scale(0.7)
+        //     top: -25%
+        //     right: -13%
 
 @media screen and ( max-width: 1199px )
     .intro
-        &__house
-            transform: scale(0.6, 0.7)
-            top: -25%
-            right: -27%
+        &__right
+            width: 415px
+            height: 623px
+        &__title
+            font-size: 35px
+        &__subtitle
+            font-size: 20px
+            &::before
+                display: none
     .house
         &__point
             display: none
@@ -209,17 +235,15 @@
                 margin-left: 0
             &:last-child
                 margin-right: 0
-        &__house
-            transform: scale(0.5, 0.6)
-            top: -33%
-            right: -45%
+        &__right
+            width: 332px
 
 @media screen and ( max-width: 767px )
     .intro
         margin-top: -70px
         &__bg-left
             &::before
-                display: block
+                display: none
                 content: ''
                 position: absolute
                 left: 0
@@ -229,6 +253,7 @@
                 width: 70px
                 height: 160px
             &::after
+                display: none
                 content: ''
                 position: absolute
                 right: 0
@@ -238,6 +263,11 @@
                 background: url('../assets/images/intro/intro__decor-right-mobile.png') no-repeat
                 z-index: -1
                 transform: scale(1.4)
+        &__right
+            top: 0
+            width: 349px
+        &__house
+            background-size: contain
         &__item
             backdrop-filter: blur(7px)
             background: rgba(255, 255, 255, 0.1)
@@ -245,7 +275,6 @@
             width: 100%
             padding: 20px
             position: relative
-            // backdrop-filter: blur(21px)
             border-radius: 10px
             background: rgba(255,255,255,0.4)
             &-img
@@ -257,11 +286,8 @@
                 text-align: left
             &-desc
                 text-align: left
-        &__house
-            transform: scale(0.3)
-            right: -52%
-            top: 9% !important
         &__title
+            font-size: 24px
             margin-bottom: 3rem
             display: none
             &_mobile
@@ -289,37 +315,47 @@
 
 @media screen and ( max-width: 576px )
     .intro
+        &__right
+            top: 9%
+            width: 140px
+            height: 200px
         &__house
-            transform: scale(0.3)
-            right: -80%
-            top: -38%
+            background-size: cover
 
-@media screen and ( max-width: 507px )
+@media screen and ( max-width: 400px )
     .intro
-        &__house
-            // top: -40%
+        .container
+            padding: 0
+        &__right
+            top: 10%
+            width: 110px
 
-@media screen and ( max-width: 434px )
-    .intro
-        &__house
-            right: -100%
+// @media screen and ( max-width: 507px )
+//     .intro
+//         &__house
+//             // top: -40%
 
-@media screen and ( max-width: 389px )
-    .intro
-        &__house
-            right: -115%
-            //top: -32%
+// @media screen and ( max-width: 434px )
+//     .intro
+//         &__house
+//             right: -100%
 
-@media screen and ( max-width: 357px )
-    .intro
-        &__house
-            right: -128%
-            //top: -32%
+// @media screen and ( max-width: 389px )
+//     .intro
+//         &__house
+//             right: -115%
+//             //top: -32%
 
-@media screen and ( max-width: 340px )
-    .intro
-        &__house
-            right: -140%
+// @media screen and ( max-width: 357px )
+//     .intro
+//         &__house
+//             right: -128%
+//             //top: -32%
+
+// @media screen and ( max-width: 340px )
+//     .intro
+//         &__house
+//             right: -140%
             //top: -32%
 // @media screen and ( max-width: 700px )
 //     .intro
