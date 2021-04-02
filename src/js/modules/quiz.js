@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { runPreloader } from './preloader';
 import { quizSlider } from './sliders';
 
 export default () => {
@@ -48,6 +49,7 @@ export default () => {
 		if (quizSlider.realIndex + 1 === 3) {
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 7) {
+			runPreloader(3000, 'Подождите, производим расчет - буферизация');
 			quizColumn.style.maxWidth = '100%';
 			for (const present of modalChoose.children) {
 				console.log(present);
@@ -81,8 +83,6 @@ export default () => {
 			quizBox.classList.add('_modal');
 			quizSuccess.classList.add('_active');
 			nextBtn.style.opacity = '0';
-			quizTitle.style.opacity = '0';
-			// console.log('Вы выбрали эти ответы во время опроса:', choosedAnswers);
 		}
 	});
 };
@@ -105,6 +105,7 @@ export const inputSize = () => {
 		if (inputSizeTrack.value >= 50) {
 			clearInterval(sizeFill);
 			inputSizeDesc.classList.add('_active');
+			nextBtn.disabled = false;
 			return false;
 		}
 		inputSizeTrack.value++;

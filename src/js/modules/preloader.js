@@ -13,8 +13,23 @@ export const removePreloader = async () => {
 	});
 	delay(1000, () => preloader.classList.add('_hide'));
 	delay(500, () => page.classList.add('_loaded'));
-	// delay(1500, () => {
-	// 	preloader.remove();
-	// 	preloaderStyles ? preloaderStyles.remove() : '';
-	// });
+};
+
+export const runPreloader = (timeDelay, text) => {
+	const page = document.querySelector('.app');
+	const preloader = document.querySelector('.preloader');
+	const preloaderText = document.querySelector('.preloader__text');
+	if (text) {
+		preloaderText.innerHTML = text;
+	}
+	const preloaderStyles = document.querySelector('style');
+	const preloaderIcon = document.querySelector('.preloader__image');
+	delay(100, () => preloader.classList.remove('_hide'));
+	delay(timeDelay - 500, () => {
+		preloaderIcon.classList.remove('_bounce');
+		preloaderIcon.classList.add('_neon');
+	});
+	delay(timeDelay, () => {
+		preloader.classList.add('_hide');
+	});
 };
