@@ -48,10 +48,11 @@ if (count($errors) > 0) {
 
 $mail_to = 'd.prytckov@yandex.ru';
 $mail_from = 'support@elbrus.ru';
+// elbrusdom.ufa@mail.ru // хз куда вставить
 $mail_header = 'Получена заявка!';
 $content = '';
 
-$content .= "<h1>Заявка на обратный звонок от elbrus</h1>";
+$content .= "<h1>Заявка на обратный звонок от ElbrusDom</h1>";
 $content .= "<br>";
 $content .= "<h2>Контактные данные</h2>";
 $content .= "<hr>";
@@ -60,23 +61,24 @@ $content .= "<p><b>Телефон: </b>$phone</p>";
 $content .= "<br>";
 
 if ($need_answers_flag) {
-    $content .= "<h2>Данные из формы</h2>";
+    // $content .= "<h2>Данные из формы</h2>";
+    $content .= "<h2>Клиент выбрал следующие ответы во время опроса: </h2>";
     foreach ($answers as $answer) {
         $content .= "<p><b>"
             . htmlspecialchars_decode($answer['question'])
-            .": </b>"
+            . ": </b>"
             . htmlspecialchars_decode($answer['answer'])
             . "</p>";
     }
 }
 
 $mail_result = mail(
-  $mail_to,
-  $mail_header,
-  $content,
-  "From: " . $mail_from . "\r\n"
-  . "Content-type: text/html; charset=utf-8\r\n"
-  . "X-Mailer: PHP mail script"
+    $mail_to,
+    $mail_header,
+    $content,
+    "From: " . $mail_from . "\r\n"
+        . "Content-type: text/html; charset=utf-8\r\n"
+        . "X-Mailer: PHP mail script"
 );
 
 if (!$mail_result) {

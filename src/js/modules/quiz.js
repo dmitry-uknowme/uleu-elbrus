@@ -22,6 +22,7 @@ export default () => {
 	};
 
 	nextBtn.disabled = true;
+	modalChoose.style.display = 'none';
 
 	for (const answer of quizAnswers) {
 		answer.addEventListener('click', (e) => {
@@ -54,7 +55,11 @@ export default () => {
 			nextBtn.addEventListener('click', () => {
 				runPreloader(3000, 'Подождите, производим расчет');
 				delay(200, () => (quizSlider.allowSlideNext = true));
-				delay(2500, () => quizSlider.slideNext());
+
+				delay(2500, () => {
+					modalChoose.style.display = 'inline-block';
+					quizSlider.slideNext();
+				});
 			});
 		} else if (quizSlider.realIndex + 1 === 7) {
 			quizColumn.style.maxWidth = '100%';
@@ -72,7 +77,7 @@ export default () => {
 			modalBtn.addEventListener('click', (e) => {
 				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
 				if (modalPhone.value.trim() !== '' || modalName.value.trim() !== '') {
-					choosedAnswers.answers.push({ question: 'Вы выбрали подарок:', answer: present });
+					choosedAnswers.answers.push({ question: 'Подарок при заказе', answer: present });
 					choosedAnswers.name = modalName.value;
 					choosedAnswers.phone = modalPhone.value;
 					const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
