@@ -5,6 +5,7 @@ Swiper.use([Navigation]);
 
 export const quizSlider = new Swiper('.quiz__container', {
 	direction: 'horizontal',
+	// speed: 3000,
 	wrapperClass: 'quiz__wrapper',
 	slideClass: 'quiz__stage',
 	allowTouchMove: false,

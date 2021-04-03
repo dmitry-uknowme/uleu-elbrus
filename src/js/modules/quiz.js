@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { delay } from '../utils';
 import { runPreloader } from './preloader';
 import { quizSlider } from './sliders';
 
@@ -48,12 +49,17 @@ export default () => {
 		nextBtn.disabled = true;
 		if (quizSlider.realIndex + 1 === 3) {
 			inputSize();
+		} else if (quizSlider.realIndex + 1 === 6) {
+			quizSlider.allowSlideNext = false;
+			nextBtn.addEventListener('click', () => {
+				runPreloader(3000, 'Подождите, производим расчет');
+				delay(200, () => (quizSlider.allowSlideNext = true));
+				delay(2500, () => quizSlider.slideNext());
+			});
 		} else if (quizSlider.realIndex + 1 === 7) {
-			runPreloader(3000, 'Подождите, производим расчет - буферизация');
 			quizColumn.style.maxWidth = '100%';
 			quizColumn.style.padding = '0';
 			for (const present of modalChoose.children) {
-				console.log(present);
 				present.addEventListener('click', (e) => {
 					const activePresent = document.querySelector('.modal__choose-item > h4._active');
 					console.log(activePresent);
@@ -65,20 +71,28 @@ export default () => {
 			}
 			modalBtn.addEventListener('click', (e) => {
 				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
-				choosedAnswers.answers.push({ question: 'Вы выбрали подарок:', answer: present });
-				choosedAnswers.name = modalName.value;
-				choosedAnswers.phone = modalPhone.value;
-				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
-				console.log('Вы выбрали эти ответы во время опроса:', postData);
-				axios
-					.post('./server/mail.php', {
-						postData,
-					})
-					.then((response) => {
-						console.log(response);
-						alert('Ваша заявки принята. Ожидайте звонка');
-					})
-					.catch((error) => alert('Ошибка отправки запроса. Попробуйте позднее'));
+				if (modalPhone.value.trim() !== '' || modalName.value.trim() !== '') {
+					choosedAnswers.answers.push({ question: 'Вы выбрали подарок:', answer: present });
+					choosedAnswers.name = modalName.value;
+					choosedAnswers.phone = modalPhone.value;
+					const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
+					console.log('Вы выбрали эти ответы во время опроса:', postData);
+					axios
+						.post('./server/mail.php', {
+							postData,
+						})
+						.then((response) => {
+							console.log(response);
+							alert('Ваша заявки принята. Ожидайте звонка');
+						})
+						.catch((error) => alert('Ошибка отправки запроса. Попробуйте позднее'));
+				} else {
+					modalName.value = '';
+					modalPhone.value = '';
+					setTimeout(() => {
+						alert('Пожалуйста, заполните все поля формы');
+					}, 100);
+				}
 			});
 
 			quizBox.classList.add('_modal');
@@ -86,6 +100,12 @@ export default () => {
 			nextBtn.style.opacity = '0';
 		}
 	});
+
+	// quizSlider.on('slideChange', () => {
+	// 	if (quizSlider.realIndex + 1 === 7) {
+	// 		quizSlider.params.speed = 4000;
+	// 	}
+	// });
 };
 
 export const inputSize = () => {
