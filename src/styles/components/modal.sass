@@ -140,16 +140,21 @@
         border-radius: 50px
         width: 0
         height: 0
+        transition: transform width 0.5s
     &__alert._active
         margin-top: 40px
         padding: 15px 15px
         width: auto
         height: auto
+        transition: transform width 0.5s
     &__alert-success
         opacity: 0
         transition: all 0.5s
-        background: lime
+        // transition: all 0.5s
+        position: relative
+        width: 120%
         transform: translate(-8%,300%)
+        background: lime
     &__alert-success._active
         width: 120%
         opacity: 1
@@ -157,6 +162,7 @@
     &__alert-error
         opacity: 0
         transition: all 0.5s
+        // transition: all 0.5s
         position: relative
         width: 120%
         transform: translate(-8%,300%)

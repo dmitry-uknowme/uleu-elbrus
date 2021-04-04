@@ -84,17 +84,28 @@ export default () => {
 				choosedAnswers.phone = modalPhone.value;
 				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
 				console.log('Вы выбрали эти ответы во время опроса:', postData);
-				if (!modalPhone.value.match(/\d+/)) {
-					modalAlertHandler(false, 'Телефон должен состоять из цифр');
-				}
-				if (!modalName.value.match(/[a-zа-я]/)) {
+
+				const isWrongName = !modalName.value.match(/[a-zа-я]/);
+				const isWrongPhone = !modalPhone.value.match(/\d+/);
+				const isPresentChoosed = document.querySelector('.modal__choose-item > h4._active');
+				const isFieldEmpty = modalPhone.value.trim() === '' || modalName.value.trim() === '';
+
+				if (isWrongName) {
 					modalAlertHandler(false, 'Введите корректное имя');
 				}
-				if (!document.querySelector('.modal__choose-item > h4._active')) {
+				if (isWrongPhone) {
+					modalAlertHandler(false, 'Телефон должен состоять из цифр');
+				}
+				if (!isPresentChoosed) {
 					modalAlertHandler(false, 'Пожалуйста, выберите подарок');
 				}
+				if (isFieldEmpty) {
+					setTimeout(() => {
+						modalAlertHandler(false, 'Пожалуйста, заполните все поля формы');
+					}, 100);
+				}
 
-				if (modalPhone.value.trim() !== '' || modalName.value.trim() !== '') {
+				if (!isFieldEmpty && !isWrongName && !isWrongPhone && isPresentChoosed && !isFieldEmpty) {
 					axios
 						.post('./server/mail.php', {
 							postData,
@@ -103,11 +114,7 @@ export default () => {
 							console.log(response);
 							modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 						})
-						.catch((error) => modalAlertHandler(false, 'Ошибка отправки запроса. Попробуйте позднее'));
-				} else if (modalPhone.value.trim() === '' || modalName.value.trim() === '') {
-					setTimeout(() => {
-						modalAlertHandler(false, 'Пожалуйста, заполните все поля формы');
-					}, 100);
+						.catch((error) => modalAlertHandler(true, 'Ошибка отправки запроса. Попробуйте позднее'));
 				}
 			});
 
@@ -190,10 +197,10 @@ export const modalAlertHandler = (isSuccess, alertText) => {
 	if (isSuccess) {
 		successAlert.textContent = alertText;
 		successAlert.classList.add('_active');
-		// setTimeout(() => successAlert.classList.remove('_active'), 2000);
+		setTimeout(() => successAlert.classList.remove('_active'), 2000);
 	} else if (!isSuccess) {
 		errorAlert.textContent = alertText;
 		errorAlert.classList.add('_active');
-		// setTimeout(() => errorAlert.classList.remove('_active'), 2000);
+		setTimeout(() => errorAlert.classList.remove('_active'), 2000);
 	}
 };
