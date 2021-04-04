@@ -21,6 +21,8 @@ export default () => {
 		if (el != null) return el.matches(sel) ? el : el.querySelector(sel) || closest(el.parentNode, sel);
 	};
 
+	// quizSlider.slideTo(5);
+
 	nextBtn.disabled = true;
 	modalChoose.style.display = 'none';
 
@@ -57,7 +59,7 @@ export default () => {
 				delay(200, () => (quizSlider.allowSlideNext = true));
 
 				delay(2500, () => {
-					modalChoose.style.display = 'inline-block';
+					modalChoose.style.display = 'flex';
 					quizSlider.slideNext();
 				});
 			});
@@ -76,26 +78,35 @@ export default () => {
 			}
 			modalBtn.addEventListener('click', (e) => {
 				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
+
+				choosedAnswers.answers.push({ question: 'Подарок при заказе', answer: present });
+				choosedAnswers.name = modalName.value;
+				choosedAnswers.phone = modalPhone.value;
+				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
+				console.log('Вы выбрали эти ответы во время опроса:', postData);
+				if (!modalPhone.value.match(/\d+/)) {
+					modalAlertHandler(false, 'Телефон должен состоять из цифр');
+				}
+				if (!modalName.value.match(/[a-zа-я]/)) {
+					modalAlertHandler(false, 'Введите корректное имя');
+				}
+				if (!document.querySelector('.modal__choose-item > h4._active')) {
+					modalAlertHandler(false, 'Пожалуйста, выберите подарок');
+				}
+
 				if (modalPhone.value.trim() !== '' || modalName.value.trim() !== '') {
-					choosedAnswers.answers.push({ question: 'Подарок при заказе', answer: present });
-					choosedAnswers.name = modalName.value;
-					choosedAnswers.phone = modalPhone.value;
-					const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
-					console.log('Вы выбрали эти ответы во время опроса:', postData);
 					axios
 						.post('./server/mail.php', {
 							postData,
 						})
 						.then((response) => {
 							console.log(response);
-							alert('Ваша заявки принята. Ожидайте звонка');
+							modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 						})
-						.catch((error) => alert('Ошибка отправки запроса. Попробуйте позднее'));
-				} else {
-					modalName.value = '';
-					modalPhone.value = '';
+						.catch((error) => modalAlertHandler(false, 'Ошибка отправки запроса. Попробуйте позднее'));
+				} else if (modalPhone.value.trim() === '' || modalName.value.trim() === '') {
 					setTimeout(() => {
-						alert('Пожалуйста, заполните все поля формы');
+						modalAlertHandler(false, 'Пожалуйста, заполните все поля формы');
 					}, 100);
 				}
 			});
@@ -105,12 +116,6 @@ export default () => {
 			nextBtn.style.opacity = '0';
 		}
 	});
-
-	// quizSlider.on('slideChange', () => {
-	// 	if (quizSlider.realIndex + 1 === 7) {
-	// 		quizSlider.params.speed = 4000;
-	// 	}
-	// });
 };
 
 export const inputSize = () => {
@@ -177,4 +182,18 @@ export const inputSize = () => {
 		inputSizeTrack.value--;
 		inputSizeHandler(e);
 	});
+};
+
+export const modalAlertHandler = (isSuccess, alertText) => {
+	const successAlert = document.querySelector('.modal__alert-success');
+	const errorAlert = document.querySelector('.modal__alert-error');
+	if (isSuccess) {
+		successAlert.textContent = alertText;
+		successAlert.classList.add('_active');
+		setTimeout(() => successAlert.classList.remove('_active'), 2000);
+	} else if (!isSuccess) {
+		errorAlert.textContent = alertText;
+		errorAlert.classList.add('_active');
+		setTimeout(() => errorAlert.classList.remove('_active'), 2000);
+	}
 };
