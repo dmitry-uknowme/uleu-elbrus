@@ -190,10 +190,10 @@ export const modalAlertHandler = (isSuccess, alertText) => {
 	if (isSuccess) {
 		successAlert.textContent = alertText;
 		successAlert.classList.add('_active');
-		setTimeout(() => successAlert.classList.remove('_active'), 2000);
+		// setTimeout(() => successAlert.classList.remove('_active'), 2000);
 	} else if (!isSuccess) {
 		errorAlert.textContent = alertText;
 		errorAlert.classList.add('_active');
-		setTimeout(() => errorAlert.classList.remove('_active'), 2000);
+		// setTimeout(() => errorAlert.classList.remove('_active'), 2000);
 	}
 };

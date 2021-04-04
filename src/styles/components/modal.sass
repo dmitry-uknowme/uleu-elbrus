@@ -172,6 +172,19 @@
 
 @media screen and ( max-width: 767px )
     .modal
+        &__alert
+            transform: translate(0,300%)
+            font-size: 13px
+            &-success
+                transform: translate(0,300%)
+            &-success._active
+                transform: translate(0,0)
+                width: 100%
+            &-error
+                transform: translate(0,0)
+            &-error._active
+                transform: translate(0,0)
+                width: 100%
         &__title
             font-size: 20px
         &__subtitle
