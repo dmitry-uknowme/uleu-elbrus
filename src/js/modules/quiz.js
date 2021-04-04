@@ -105,16 +105,21 @@ export default () => {
 					}, 100);
 				}
 
-				if (!isFieldEmpty && !isWrongName && !isWrongPhone && isPresentChoosed && !isFieldEmpty) {
+				if (!isFieldEmpty && !isWrongName && !isWrongPhone && isPresentChoosed) {
 					axios
 						.post('./server/mail.php', {
 							postData,
 						})
 						.then((response) => {
 							console.log(response);
-							modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 						})
-						.catch((error) => modalAlertHandler(true, 'Ошибка отправки запроса. Попробуйте позднее'));
+						.catch((error) => {
+							if (error) {
+								modalAlertHandler(false, 'Ошибка отправки запроса. Попробуйте позднее');
+							} else if (!error) {
+								modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
+							}
+						});
 				}
 			});
 
