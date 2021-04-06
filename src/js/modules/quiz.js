@@ -77,18 +77,26 @@ export default () => {
 				});
 			}
 			modalBtn.addEventListener('click', (e) => {
-				const present = document.querySelector('.modal__choose-item > h4._active').textContent;
+				const isWrongName = !modalName.value.match(/[a-zа-я]/);
+				const isWrongPhone = !modalPhone.value.match(/\d+/);
+				// const isPresentChoosed = document.querySelector('.modal__choose-item > h4._active');
+				const isPresentChoosed = choosedAnswers.answers.find((answer) => answer.question === 'Подарок при заказе');
+				const isFieldEmpty = modalPhone.value.trim() === '' || modalName.value.trim() === '';
+				const present = document.querySelector('.modal__choose-item > h4._active').textContent.replace(/\n\t/gm, '');
 
-				choosedAnswers.answers.push({ question: 'Подарок при заказе', answer: present });
+				for (const answer of choosedAnswers.answers) {
+					if (answer.question === 'Подарок при заказе') {
+						answer.answer = present;
+					}
+				}
+				if (!isPresentChoosed) {
+					choosedAnswers.answers.push({ question: 'Подарок при заказе', answer: present, type: 'present' });
+				}
+
 				choosedAnswers.name = modalName.value;
 				choosedAnswers.phone = modalPhone.value;
 				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
 				console.log('Вы выбрали эти ответы во время опроса:', postData);
-
-				const isWrongName = !modalName.value.match(/[a-zа-я]/);
-				const isWrongPhone = !modalPhone.value.match(/\d+/);
-				const isPresentChoosed = document.querySelector('.modal__choose-item > h4._active');
-				const isFieldEmpty = modalPhone.value.trim() === '' || modalName.value.trim() === '';
 
 				if (isWrongName) {
 					modalAlertHandler(false, 'Введите корректное имя');
