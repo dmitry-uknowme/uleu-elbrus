@@ -10,7 +10,7 @@ if (empty($request)) {
     return;
 }
 
-$request = $request['postData'];
+$request = json_decode($request['postData'], true);
 
 $name = htmlspecialchars_decode($request['name']);
 $phone = htmlspecialchars_decode($request['phone']);
@@ -47,7 +47,7 @@ if (count($errors) > 0) {
 }
 
 $mail_to = 'd.prytckov@yandex.ru';
-$mail_from = 'support@elbrus.ru';
+$mail_from = 'support@elbrus-ufa.ru';
 // elbrusdom.ufa@mail.ru // хз куда вставить
 $mail_header = 'Получена заявка!';
 $content = '';
@@ -62,7 +62,7 @@ $content .= "<br>";
 
 if ($need_answers_flag) {
     // $content .= "<h2>Данные из формы</h2>";
-    $content .= "<h2>Клиент выбрал следующие ответы во время опроса: </h2>";
+    $content .= "<h2>Клиент выбрал следующие ответы во время опроса: </h2><hr>";
     foreach ($answers as $answer) {
         $content .= "<p><b>"
             . htmlspecialchars_decode($answer['question'])
@@ -77,8 +77,8 @@ $mail_result = mail(
     $mail_header,
     $content,
     "From: " . $mail_from . "\r\n"
-        . "Content-type: text/html; charset=utf-8\r\n"
-        . "X-Mailer: PHP mail script"
+    . "Content-type: text/html; charset=utf-8\r\n"
+    . "X-Mailer: PHP mail script"
 );
 
 if (!$mail_result) {
