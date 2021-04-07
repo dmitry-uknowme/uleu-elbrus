@@ -54,9 +54,9 @@ export default () => {
 				if (quizSlider.realIndex + 1 !== 3) {
 					for (let i = 0; i < choosedAnswers.answers.length; i++) {
 						if (choosedAnswers.answers[i].question === quizQuestion) {
-							console.log('дубликат: ', choosedAnswers.answers[i].question, quizQuestion)
+							console.log('дубликат: ', choosedAnswers.answers[i].question, quizQuestion);
 							choosedAnswers.answers[i].answer = quizValue;
-							answer_find = true
+							answer_find = true;
 						}
 					}
 
@@ -102,6 +102,7 @@ export default () => {
 					e.target.children[1].classList.add('_active');
 				});
 			}
+
 			modalBtn.addEventListener('click', (e) => {
 				const isWrongName = !modalName.value.match(/[a-zа-я]/);
 				const isWrongPhone = !modalPhone.value.match(/\d+/);
@@ -121,7 +122,9 @@ export default () => {
 
 				choosedAnswers.name = modalName.value;
 				choosedAnswers.phone = modalPhone.value;
-				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, '');
+				// const postData = JSON.stringify(choosedAnswers, null, 2).replace(/\\t/g, '').replace(/\\n/g, ' ');
+				const postData = JSON.stringify(choosedAnswers).replace(/\\t/g, '').replace(/\\n/g, ' ');
+				// document.querySelector('.quiz').insertAdjacentHTML('beforeend', `<pre>${postData}</pre>`);
 				console.log('Вы выбрали эти ответы во время опроса:', postData);
 
 				if (isWrongName) {
