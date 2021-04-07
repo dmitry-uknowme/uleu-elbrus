@@ -146,12 +146,11 @@ export default () => {
 						})
 						.then((response) => {
 							console.log(response);
+							modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 						})
 						.catch((error) => {
 							if (error) {
 								modalAlertHandler(false, 'Ошибка отправки запроса. Попробуйте позднее');
-							} else if (!error) {
-								modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 							}
 						});
 				}

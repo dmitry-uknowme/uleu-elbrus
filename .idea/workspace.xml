@@ -199,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617802529526</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update quiz logic">
+      <created>1617809539702</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1617809539702</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add yandex metrika">
+      <created>1617809755153</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617809755153</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +247,8 @@
     <MESSAGE value="step 3" />
     <MESSAGE value="fix errors" />
     <MESSAGE value="update server" />
-    <option name="LAST_COMMIT_MESSAGE" value="update server" />
+    <MESSAGE value="update quiz logic" />
+    <MESSAGE value="add yandex metrika" />
+    <option name="LAST_COMMIT_MESSAGE" value="add yandex metrika" />
   </component>
 </project>
