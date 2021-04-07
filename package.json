@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta2",
+    "imask": "^6.0.7",
     "swiper": "^6.5.0"
   },
   "devDependencies": {
