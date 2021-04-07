@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac227ac4-f693-45bd-8ce6-6e33f6437049" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/styles/components/btn.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/btn.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/sections/intro.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sections/intro.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/modules/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/quiz.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev_merge" />
+        <entry key="$PROJECT_DIR$" value="dima" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -193,7 +192,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617383270032</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update server">
+      <created>1617802529526</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1617802529526</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update quiz logic">
+      <created>1617809539702</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1617809539702</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add yandex metrika">
+      <created>1617809755153</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617809755153</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +246,9 @@
     <MESSAGE value="step 2" />
     <MESSAGE value="step 3" />
     <MESSAGE value="fix errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix errors" />
+    <MESSAGE value="update server" />
+    <MESSAGE value="update quiz logic" />
+    <MESSAGE value="add yandex metrika" />
+    <option name="LAST_COMMIT_MESSAGE" value="add yandex metrika" />
   </component>
 </project>

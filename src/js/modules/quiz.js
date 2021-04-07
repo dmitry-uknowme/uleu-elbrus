@@ -31,11 +31,13 @@ export default () => {
 			const slideId = quizSlider.realIndex;
 			const slideParent = quizSlider.slides[slideId];
 			const slideParentStage = slideParent.classList[1];
+
 			if (quizSlider.realIndex + 1 !== 7) {
 				const quizQuestion = closest(e.target, '.quiz__question').getAttribute('data-real-question');
 				const quizRawQuestion = closest(e.target, '.quiz__question').textContent;
 				const quizTitle = closest(e.target, '.quiz__answer-title');
-				const quizValue = quizTitle.textContent.replace(/\n\t/gm, '');
+				const quizValue = quizTitle.textContent.replace('<br>', ' ');
+				//console.log(quizTitle, quizValue);
 				const activeQuizTitle = document.querySelector(`.${slideParentStage} .quiz__answer-title._active`);
 				if (activeQuizTitle) {
 					activeQuizTitle.classList.remove('_active');
@@ -43,13 +45,37 @@ export default () => {
 				quizTitle.classList.add('_active');
 				nextBtn.disabled = false;
 
-				choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
+				/**
+				 * Если существует дубликат вопроса - изменить свойство answer
+				 * Иначе - добавить вопрос
+				 * Квадратура обрабатывается в другом месте
+				 */
+				let answer_find = false;
+				if (quizSlider.realIndex + 1 !== 3) {
+					for (let i = 0; i < choosedAnswers.answers.length; i++) {
+						if (choosedAnswers.answers[i].question === quizQuestion) {
+							console.log('дубликат: ', choosedAnswers.answers[i].question, quizQuestion)
+							choosedAnswers.answers[i].answer = quizValue;
+							answer_find = true
+						}
+					}
+
+					if (!answer_find) {
+						choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
+					}
+				}
 			}
 			// quizSlider.slideNext();
 		});
 	}
 	quizSlider.on('slideChange', () => {
 		nextBtn.disabled = true;
+		if (quizSlider.realIndex + 1 === 4) {
+			const quizQuestion = 'Какой квадратуры дом вы хотите?';
+			const quizRawQuestion = 'Какой квадратуры дом вы хотите?';
+			const quizValue = document.querySelector('.quiz__answer-number span').innerHTML + ' КВ/М';
+			choosedAnswers.answers.push({ question: quizQuestion, answer: quizValue, rawQuestion: quizRawQuestion });
+		}
 		if (quizSlider.realIndex + 1 === 3) {
 			inputSize();
 		} else if (quizSlider.realIndex + 1 === 6) {
@@ -104,28 +130,27 @@ export default () => {
 				if (isWrongPhone) {
 					modalAlertHandler(false, 'Телефон должен состоять из цифр');
 				}
-				if (!isPresentChoosed) {
-					modalAlertHandler(false, 'Пожалуйста, выберите подарок');
-				}
+				// if (!isPresentChoosed) {
+				// 	modalAlertHandler(false, 'Пожалуйста, выберите подарок');
+				// }
 				if (isFieldEmpty) {
 					setTimeout(() => {
 						modalAlertHandler(false, 'Пожалуйста, заполните все поля формы');
 					}, 100);
 				}
 
-				if (!isFieldEmpty && !isWrongName && !isWrongPhone && isPresentChoosed) {
+				if (!isFieldEmpty && !isWrongName && !isWrongPhone) {
 					axios
 						.post('./server/mail.php', {
 							postData,
 						})
 						.then((response) => {
 							console.log(response);
+							modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 						})
 						.catch((error) => {
 							if (error) {
 								modalAlertHandler(false, 'Ошибка отправки запроса. Попробуйте позднее');
-							} else if (!error) {
-								modalAlertHandler(true, 'Ваша заявки принята. Ожидайте звонка');
 							}
 						});
 				}
